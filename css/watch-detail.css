@@ -1,0 +1,982 @@
+/**
+ * HOROLOGY — Scoped Stylesheet: Watch Detail & Inspection Dossier (Phase 04)
+ * Direction C — Midnight Navy Edition
+ */
+
+/* ==========================================================================
+   1. EDITORIAL PRODUCT HERO & LAYOUT
+   ========================================================================== */
+.watch-detail-container {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-16);
+}
+
+.watch-hero-layout {
+  display: grid;
+  grid-template-columns: 58% 1fr;
+  gap: var(--space-10);
+  align-items: start;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-16);
+}
+
+@media (max-width: 1024px) {
+  .watch-hero-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* ==========================================================================
+   2. INTERACTIVE GALLERY STAGE & CONTROLS
+   ========================================================================== */
+.watch-gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.gallery-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: crosshair;
+  touch-action: pan-y;
+  user-select: none;
+}
+
+@media (max-width: 768px) {
+  .gallery-stage {
+    aspect-ratio: 4 / 5;
+    max-height: 62vh;
+  }
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: var(--space-6);
+  transition: opacity 250ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Interactive Loupe Zoom Overlay */
+.gallery-loupe {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.25);
+  pointer-events: none;
+  display: none;
+  z-index: 25;
+  background-repeat: no-repeat;
+  background-color: var(--canvas);
+}
+
+/* Gallery Controls & Overlay Pills */
+.gallery-overlay-top {
+  position: absolute;
+  top: var(--space-4);
+  left: var(--space-4);
+  right: var(--space-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.gallery-overlay-top > * {
+  pointer-events: auto;
+}
+
+.gallery-category-pill {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(7, 17, 31, 0.85);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+}
+
+.gallery-fullscreen-btn {
+  background: rgba(7, 17, 31, 0.85);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease;
+  backdrop-filter: blur(8px);
+}
+
+.gallery-fullscreen-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--surface-elevated);
+}
+
+.gallery-nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(7, 17, 31, 0.8);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 200ms ease;
+  backdrop-filter: blur(8px);
+}
+
+.gallery-nav-btn:hover {
+  background: var(--surface-elevated);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.gallery-nav-prev {
+  left: var(--space-3);
+}
+
+.gallery-nav-next {
+  right: var(--space-3);
+}
+
+.gallery-counter-pill {
+  position: absolute;
+  bottom: var(--space-4);
+  right: var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--text-muted);
+  background: rgba(7, 17, 31, 0.85);
+  border: 1px solid var(--border-subtle);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(8px);
+  z-index: 10;
+}
+
+/* Thumbnail Rail */
+.gallery-thumbnails {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding-bottom: var(--space-2);
+  scrollbar-width: thin;
+}
+
+.gallery-thumb {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background-color: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  transition: all 200ms ease;
+}
+
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gallery-thumb:hover {
+  border-color: var(--border-strong);
+}
+
+.gallery-thumb.active {
+  border-color: var(--accent);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+}
+
+.gallery-thumb-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 8px;
+  text-align: center;
+}
+
+/* ==========================================================================
+   3. STICKY IDENTITY & ACTION PANEL
+   ========================================================================== */
+.watch-identity-panel {
+  position: sticky;
+  top: 96px;
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-card);
+}
+
+@media (max-width: 1024px) {
+  .watch-identity-panel {
+    position: static;
+  }
+}
+
+.watch-identity-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2);
+}
+
+.watch-brand-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.watch-origin-tag {
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  color: var(--text-muted);
+}
+
+.watch-title-display {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.watch-reference-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+  letter-spacing: 0.05em;
+}
+
+.watch-badge-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.watch-price-box {
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.watch-price-num {
+  font-family: var(--font-display);
+  font-size: 2.3rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.watch-price-subtext {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+}
+
+.watch-summary-prose {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.watch-action-cluster {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.watch-action-cluster .btn-primary {
+  flex: 1 1 200px;
+  min-height: 48px;
+}
+
+.watch-secondary-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.watch-trust-pills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface-secondary);
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+}
+
+.trust-pill-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+}
+
+.trust-pill-item svg {
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   4. SECTION B — WATCH OVERVIEW
+   ========================================================================== */
+.watch-overview-grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+@media (max-width: 900px) {
+  .watch-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.overview-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+}
+
+.overview-char-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.overview-char-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+}
+
+.overview-char-item svg {
+  color: var(--accent);
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.historical-context-panel {
+  background: var(--surface-secondary);
+  border-left: 3px solid var(--accent);
+  padding: var(--space-6);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin-top: var(--space-6);
+}
+
+/* ==========================================================================
+   5. SECTION C — TECHNICAL SPECIFICATIONS MATRIX
+   ========================================================================== */
+.specs-matrix-section {
+  margin-bottom: var(--space-16);
+}
+
+.specs-grid-layout {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .specs-grid-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.specs-group-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.specs-group-header {
+  padding: var(--space-4) var(--space-6);
+  background: var(--surface-secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.specs-group-body {
+  padding: var(--space-2) var(--space-6);
+}
+
+.spec-matrix-row {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-3) 0;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: var(--text-sm);
+}
+
+.spec-matrix-row:last-child {
+  border-bottom: none;
+}
+
+.spec-matrix-label {
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+}
+
+.spec-matrix-val {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  text-align: right;
+  max-width: 60%;
+}
+
+/* Mobile Spec Accordions */
+@media (max-width: 768px) {
+  .specs-group-card {
+    border-radius: var(--radius-sm);
+  }
+  .specs-group-header {
+    cursor: pointer;
+  }
+}
+
+/* ==========================================================================
+   6. SECTION D — MOVEMENT INTELLIGENCE
+   ========================================================================== */
+.movement-intelligence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-16);
+}
+
+@media (max-width: 900px) {
+  .movement-intelligence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.movement-specs-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+}
+
+.movement-telemetry-notice {
+  margin-top: var(--space-6);
+  padding: var(--space-4);
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-xs);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.movement-telemetry-notice strong {
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   7. SECTION E — CONDITION ASSESSMENT
+   ========================================================================== */
+.condition-section {
+  margin-bottom: var(--space-16);
+}
+
+.condition-rubric-card {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+/* Expandable HOROLOGY Condition Grading Scale */
+.grading-scale-toggle-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--accent);
+  padding: 6px 14px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all 200ms ease;
+  margin-bottom: var(--space-4);
+}
+
+.grading-scale-toggle-btn:hover {
+  background: var(--surface-secondary);
+  border-color: var(--accent);
+}
+
+.grading-scale-panel {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  display: none;
+}
+
+.grading-scale-tier {
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.grading-scale-tier:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.grading-tier-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: 4px;
+}
+
+.grading-tier-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.grading-tier-desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* Gallery Cross-Jump Button */
+.gallery-jump-btn {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-2xs);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 150ms ease;
+  margin-top: 6px;
+}
+
+.gallery-jump-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.condition-disclaimer-banner {
+  background: var(--surface-secondary);
+  border-left: 3px solid var(--gold);
+  padding: var(--space-4) var(--space-6);
+  border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-6);
+}
+
+.component-grades-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .component-grades-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.component-grade-box {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: var(--space-4);
+}
+
+.component-grade-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.component-grade-detail {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   8. SECTION F — HOROLOGY INSPECTION DOSSIER PREVIEW CARD
+   ========================================================================== */
+.dossier-preview-banner {
+  background: linear-gradient(135deg, var(--surface) 0%, var(--surface-secondary) 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+  margin-bottom: var(--space-16);
+  position: relative;
+  overflow: hidden;
+}
+
+.dossier-preview-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 320px;
+  height: 100%;
+  background: radial-gradient(circle at right, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.dossier-preview-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+}
+
+.dossier-preview-left {
+  max-width: 680px;
+}
+
+.dossier-status-pill-row {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   9. SECTION G — RELATED WATCHES
+   ========================================================================== */
+.related-watches-section {
+  margin-bottom: var(--space-16);
+}
+
+.related-watches-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 1200px) {
+  .related-watches-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .related-watches-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   10. FULLSCREEN LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: rgba(7, 17, 31, 0.96);
+  backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-6);
+}
+
+.lightbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-primary);
+  margin-bottom: var(--space-4);
+}
+
+.lightbox-stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.lightbox-img {
+  max-width: 85vw;
+  max-height: 80vh;
+  object-fit: contain;
+  transition: transform 250ms ease;
+}
+
+.lightbox-close-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+.lightbox-close-btn:hover {
+  background: var(--surface-elevated);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ==========================================================================
+   11. INQUIRY MODAL (DEMONSTRATION DISCLOSURE)
+   ========================================================================== */
+.inquiry-dialog {
+  max-width: 560px;
+  width: 90vw;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-8);
+  box-shadow: var(--shadow-modal);
+  position: relative;
+}
+
+.inquiry-honesty-banner {
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--radius-xs);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-6);
+  font-size: var(--text-xs);
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+.inquiry-form-group {
+  margin-bottom: var(--space-4);
+}
+
+.inquiry-form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inquiry-form-group input,
+.inquiry-form-group select,
+.inquiry-form-group textarea {
+  width: 100%;
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  outline: none;
+  transition: border-color 200ms ease;
+}
+
+.inquiry-form-group input:focus,
+.inquiry-form-group select:focus,
+.inquiry-form-group textarea:focus {
+  border-color: var(--accent);
+}
+
+/* ==========================================================================
+   12. INSPECTION DOSSIER FULL VIEW STYLING (pages/dossier.js)
+   ========================================================================== */
+.dossier-full-page {
+  padding-top: var(--space-6);
+  padding-bottom: var(--space-16);
+}
+
+.dossier-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-4) 0;
+  margin-bottom: var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.dossier-main-card {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: var(--space-10);
+  box-shadow: var(--shadow-card);
+}
+
+.dossier-section-block {
+  margin-top: var(--space-10);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.telemetry-honest-card {
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.telemetry-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .telemetry-metric-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.telemetry-metric-box {
+  background: var(--surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.telemetry-val-pending {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  color: var(--accent);
+  padding: 8px 12px;
+  background: rgba(212, 175, 55, 0.08);
+  border-radius: var(--radius-xs);
+  display: inline-block;
+  margin: var(--space-2) 0;
+}
+
+.authenticity-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-sm);
+  margin-top: var(--space-4);
+}
+
+.authenticity-table th,
+.authenticity-table td {
+  padding: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+}
+
+.authenticity-table th {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: var(--surface-secondary);
+}
+
+.doc-inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .doc-inventory-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.doc-inventory-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4);
+  background: var(--surface-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+}
+

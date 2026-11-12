@@ -1,0 +1,190 @@
+/**
+ * HOROLOGY — Responsive Stylesheet
+ * Fluid Adaptive Scaling across 360px through 1920px+
+ */
+
+/* ==========================================================================
+   Tablet Landscape & Small Laptops (<= 1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex;
+  }
+
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+  }
+
+  .footer-grid > :first-child {
+    grid-column: span 2;
+    margin-bottom: var(--space-4);
+  }
+
+  .watch-detail-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .two-column-split {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+}
+
+/* ==========================================================================
+   Tablet Portrait & Large Mobile (<= 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .header-inner {
+    height: 70px;
+  }
+
+  .section-spacer {
+    padding-top: var(--space-12);
+    padding-bottom: var(--space-12);
+  }
+
+  .section-spacer-lg {
+    padding-top: var(--space-16);
+    padding-bottom: var(--space-16);
+  }
+
+  .watch-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--space-4);
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  .footer-grid > :first-child {
+    grid-column: span 1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-actions .btn-sm {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   Small Mobile Viewports (<= 480px)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+
+  .watch-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-wordmark {
+    font-size: 1.25rem;
+    letter-spacing: 0.14em;
+  }
+
+  .search-overlay {
+    padding: var(--space-6) var(--space-3);
+  }
+
+  .search-input {
+    font-size: var(--text-base);
+    padding: 0.85rem 2.5rem 0.85rem 0.85rem;
+  }
+
+  .action-buttons-group .btn,
+  .hero-cta-group .btn,
+  .form-actions .btn {
+    width: 100%;
+  }
+
+  /* Prevent automatic mobile safari zoom by ensuring 16px input font size */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important;
+  }
+
+  /* Modal scaling for small mobile screens */
+  .modal-dialog {
+    width: calc(100vw - 20px) !important;
+    margin: 10px auto !important;
+    padding: var(--space-4) !important;
+  }
+}
+
+/* ==========================================================================
+   Ultra-Small Viewports (<= 360px - e.g. Galaxy Fold / iPhone SE)
+   ========================================================================== */
+@media (max-width: 360px) {
+  .container {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .heading-1 {
+    font-size: 1.6rem !important;
+  }
+
+  .heading-2 {
+    font-size: 1.35rem !important;
+  }
+
+  .brand-wordmark {
+    font-size: 1.1rem;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .nav-action-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ==========================================================================
+   Large Desktop & Ultra-Wide Viewports (>= 1600px - 1920px+)
+   ========================================================================== */
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1540px;
+  }
+
+  .heading-display {
+    font-size: 4.8rem;
+  }
+
+  .watch-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-8);
+  }
+}
+

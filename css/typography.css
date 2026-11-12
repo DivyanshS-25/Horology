@@ -1,0 +1,123 @@
+/**
+ * HOROLOGY — Typography Stylesheet
+ * Direction C — Midnight Navy Editorial System
+ */
+
+/* Editorial Headings (Cormorant Garamond) */
+h1, h2, h3, h4, h5, h6,
+.font-serif,
+.heading-display,
+.heading-1,
+.heading-2,
+.heading-3 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.heading-display {
+  font-size: var(--text-hero);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+.heading-1 {
+  font-size: var(--text-4xl);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.heading-2 {
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.heading-3 {
+  font-size: var(--text-2xl);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.heading-4 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Technical Monospace & Spec Data (JetBrains Mono) */
+code, kbd, samp, pre,
+.font-mono,
+.tabular-spec,
+.timegrapher-readout,
+.price-display,
+.reference-badge,
+.badge-mono {
+  font-family: var(--font-mono);
+  font-feature-settings: 'tnum' on, 'zero' on;
+  letter-spacing: 0.02em;
+}
+
+/* Small Caps & Editorial Overlines */
+.overline,
+.section-kicker,
+.meta-label {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  display: inline-block;
+}
+
+.brand-wordmark {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.lead-text {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-weight: 300;
+}
+
+.body-muted {
+  color: var(--text-muted);
+}
+
+.text-accent {
+  color: var(--accent-primary);
+}
+
+.text-verified {
+  color: var(--status-verified);
+}
+
+.text-gold {
+  color: var(--status-reserved);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+

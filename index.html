@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOROLOGY — Beyond Time. Beyond Ordinary.</title>
+  <meta name="description" content="HOROLOGY: A considered sanctuary of certified pre-owned mechanical chronometers. Verified with forensic horological rigor and transparent timegrapher telemetry.">
+  <meta name="theme-color" content="#050608">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="HOROLOGY — Beyond Time. Beyond Ordinary.">
+  <meta property="og:description" content="Certified luxury mechanical timepieces from Rolex, Omega, Tudor, and Grand Seiko. Forensic authentication & archival dossiers.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/images/og/og-card-1200x630.png">
+
+  <!-- Favicon SVG (Obsidian Luxury Balance Wheel Emblem) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23050608' rx='4'/><circle cx='16' cy='16' r='10' fill='none' stroke='%23D4AF37' stroke-width='2'/><circle cx='16' cy='16' r='3' fill='%23D4AF37'/><line x1='16' y1='6' x2='16' y2='10' stroke='%23D4AF37' stroke-width='2'/><line x1='16' y1='22' x2='16' y2='26' stroke='%23D4AF37' stroke-width='2'/><line x1='6' y1='16' x2='10' y2='16' stroke='%23D4AF37' stroke-width='2'/><line x1='22' y1='16' x2='26' y2='16' stroke='%23D4AF37' stroke-width='2'/></svg>">
+
+  <!-- Google Fonts (Editorial Serif + Technical Sans + Chronometer Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Cascade Layered Modular Stylesheets (Direction Obsidian Luxury) -->
+  <link rel="stylesheet" href="./css/tokens.css">
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/typography.css">
+  <link rel="stylesheet" href="./css/global.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/home.css">
+  <link rel="stylesheet" href="./css/marketplace.css">
+  <link rel="stylesheet" href="./css/watch-detail.css">
+  <link rel="stylesheet" href="./css/inspection-dossier.css">
+  <link rel="stylesheet" href="./css/collector-tools.css">
+  <link rel="stylesheet" href="./css/business-forms.css">
+  <link rel="stylesheet" href="./css/navigation.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <link rel="stylesheet" href="./css/print.css">
+</head>
+<body class="site-wrapper">
+  <!-- Accessibility Skip-to-Content Link -->
+  <a href="#app" class="sr-only">Skip to main content</a>
+
+  <!-- Application Initialization Loader (Fades out when router mounts) -->
+  <div id="appLoader" class="app-loader" role="status" aria-live="polite" aria-label="Loading HOROLOGY">
+    <div class="app-loader-content">
+      <div class="brand-wordmark mb-3 animate-pulse" style="font-size: 2.2rem; justify-content: center;">
+        <span style="color: #D4AF37; margin-right: 8px;">⌖</span>
+        <span>HOROLOGY</span>
+      </div>
+      <p class="body-muted font-mono" style="font-size: var(--text-xs); letter-spacing: 0.15em; text-transform: uppercase;">
+        Beyond Time. Beyond Ordinary.
+      </p>
+      <div id="loaderStatus" class="font-mono text-2xs" style="color: var(--text-muted); margin-top: 16px; min-height: 18px; font-size: 11px;">
+        Initializing Observatory...
+      </div>
+      <div id="loaderRecovery" style="display: none; margin-top: 20px;">
+        <p id="loaderErrorMessage" style="color: var(--accent-primary); font-size: 12px; font-family: var(--font-mono); margin-bottom: 14px; line-height: 1.5;">
+          Initialization timeout. Click below to proceed.
+        </p>
+        <div style="display: flex; gap: 8px; justify-content: center; flex-wrap: wrap;">
+          <button type="button" class="btn btn-primary btn-sm" id="btnForceDismissLoader" style="font-size: 11px;">
+            Enter Observatory
+          </button>
+          <button type="button" class="btn btn-outline btn-sm" onclick="window.location.reload()" style="font-size: 11px;">
+            Reload Page
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Persistent Header Mount -->
+  <header id="siteHeader" class="site-header" role="banner"></header>
+
+  <!-- Global Search Overlay Portal -->
+  <div id="searchOverlay" class="search-overlay"></div>
+
+  <!-- Mobile Drawer Navigation Portal -->
+  <div id="mobileDrawer" class="mobile-drawer"></div>
+
+  <!-- Main View Container (Client Hash Router Mount) -->
+  <main id="app" class="site-main" role="main" tabindex="-1"></main>
+
+  <!-- Global Persistent Footer Mount -->
+  <footer id="siteFooter" class="site-footer" role="contentinfo"></footer>
+
+  <!-- Modal Dialog Portal -->
+  <div id="modalPortal" class="modal-portal"></div>
+
+  <!-- Accessible Toast Notification Region -->
+  <div id="toastRegion" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Non-Module Inline Guardian Script (Guarantees Loader Dismissal & Diagnostics Even on Network/CORS Issues) -->
+  <script>
+    (function() {
+      // Diagnostic check: running directly from file:// protocol
+      if (window.location.protocol === 'file:') {
+        var statusEl = document.getElementById('loaderStatus');
+        var recoveryEl = document.getElementById('loaderRecovery');
+        var errorMsg = document.getElementById('loaderErrorMessage');
+        if (statusEl) statusEl.textContent = 'Local File Protocol Detected';
+        if (errorMsg) {
+          errorMsg.innerHTML = 'Browsers block JavaScript ES modules on <code>file:///</code> URLs.<br>Please open via a local server (e.g. <code>powershell -File .\\scratch\\server.ps1</code> or <code>npx serve</code>) or GitHub Pages.';
+        }
+        if (recoveryEl) recoveryEl.style.display = 'block';
+      }
+
+      // Safety timeout: If app hasn't signaled ready within 3.5s, surface recovery options
+      setTimeout(function() {
+        if (!window.__HOROLOGY_READY__) {
+          var recoveryEl = document.getElementById('loaderRecovery');
+          var statusEl = document.getElementById('loaderStatus');
+          if (statusEl) statusEl.textContent = 'Initialization Timeout';
+          if (recoveryEl) recoveryEl.style.display = 'block';
+        }
+      }, 3500);
+
+      // Force Dismiss Button
+      var forceBtn = document.getElementById('btnForceDismissLoader');
+      if (forceBtn) {
+        forceBtn.addEventListener('click', function() {
+          var loader = document.getElementById('appLoader');
+          if (loader) {
+            loader.classList.add('app-loader-hidden');
+            setTimeout(function() { loader.style.display = 'none'; }, 350);
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- ES Module Application Bootstrap -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

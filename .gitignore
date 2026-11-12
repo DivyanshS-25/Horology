@@ -1,0 +1,12 @@
+# HOROLOGY — Git Ignore
+scratch/
+.system_generated/
+*.tmp
+*.log
+
+# OS & Editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/

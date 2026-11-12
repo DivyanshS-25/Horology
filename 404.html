@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HOROLOGY — Redirecting...</title>
+  <script>
+    // GitHub Pages SPA Single-Page Router Redirect
+    // Redirects deep links to hash-based path
+    const path = window.location.pathname.replace(/^\/+/g, '');
+    const search = window.location.search || '';
+    const hash = window.location.hash || '';
+    window.location.replace('/#' + (path ? '/' + path : '/') + search + hash);
+  </script>
+</head>
+<body style="background: #07111F; color: #F1F4F8; font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0;">
+  <p>Redirecting to HOROLOGY Vault...</p>
+</body>
+</html>

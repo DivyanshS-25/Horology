@@ -1,0 +1,95 @@
+/* HOROLOGY — CSS Print Layer (Phase 04 Enhanced) */
+@layer print {
+  @media print {
+    *, *::before, *::after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+
+    body {
+      background: #fff !important;
+      color: #111 !important;
+      font-size: 10pt;
+      line-height: 1.4;
+      padding: 0;
+      margin: 0;
+    }
+
+    .site-header,
+    .site-footer,
+    .mobile-drawer,
+    .drawer-backdrop,
+    .compare-dock,
+    .toast-container,
+    .btn,
+    .watch-card-actions,
+    .watch-card-quickview-btn,
+    .modal-backdrop,
+    .lightbox-modal,
+    .dossier-top-bar,
+    .no-print {
+      display: none !important;
+    }
+
+    .site-main {
+      padding-top: 0 !important;
+    }
+
+    .container {
+      max-width: 100% !important;
+      padding: 0 !important;
+    }
+
+    .dossier-sheet {
+      border: 1px solid #111 !important;
+      padding: 15mm !important;
+      background: #fff !important;
+      page-break-inside: auto;
+    }
+
+    .dossier-section-block {
+      border-top: 1px solid #ddd !important;
+      margin-top: 15pt !important;
+      padding-top: 15pt !important;
+      page-break-inside: avoid;
+    }
+
+    .authenticity-table,
+    .spec-table,
+    .pos-rate-table {
+      border: 1px solid #ccc !important;
+      width: 100% !important;
+    }
+
+    .authenticity-table th,
+    .authenticity-table td,
+    .spec-table th,
+    .spec-table td {
+      border-bottom: 1px solid #ddd !important;
+      color: #111 !important;
+      padding: 6pt !important;
+    }
+
+    .badge {
+      border: 1px solid #333 !important;
+      color: #000 !important;
+      background: #f5f5f5 !important;
+      padding: 2pt 6pt !important;
+    }
+
+    .telemetry-honest-card,
+    .telemetry-metric-box,
+    .doc-inventory-item {
+      border: 1px solid #ccc !important;
+      background: #fff !important;
+      padding: 8pt !important;
+    }
+
+    @page {
+      size: A4 portrait;
+      margin: 12mm;
+    }
+  }
+}

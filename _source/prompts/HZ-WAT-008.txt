@@ -1,0 +1,14 @@
+﻿# HOROLOGY ASSET PROMPT: HZ-WAT-008
+# ========================================================
+
+## STYLE BLOCK:
+Luxury horology editorial photography, Midnight Navy atmosphere. Deep navy-black background (#050B16 to #0B1A2E) with a soft azure glow behind the subject. One large soft key light from upper left, cool steel-blue rim light from the right, cinematic shadow falloff, controlled studio lighting. Realistic brushed and polished stainless steel with crisp specular lines on bevels, accurate watch proportions, finely detailed dial texture, natural material rendering, premium editorial composition, photorealistic, sharp focus on the subject, 100mm macro lens quality.
+
+## SCENE PROMPT:
+Omega Constellation archetype: Integrated steel bracelet, iconic side claw details on bezel with Roman numerals, silk-textured opaline dial.
+
+## NEGATIVE BLOCK:
+No text, no lettering, no numerals that are illegible, no logos, no brand names, no watermarks, no signatures, no distorted or duplicated hands, no incorrect dial markings, no warped bezels, no melted or fused components, no plastic-looking metal, no impossible reflections, no oversaturated colours, no lens flare effects, no excessive glow or particle effects, no cartoon or CGI look, no visible faces, no gold or olive colour grading.
+
+## FULL COMBINED GENERATION PROMPT:
+Luxury horology editorial photography, Midnight Navy atmosphere. Deep navy-black background (#050B16 to #0B1A2E) with a soft azure glow behind the subject. One large soft key light from upper left, cool steel-blue rim light from the right, cinematic shadow falloff, controlled studio lighting. Realistic brushed and polished stainless steel with crisp specular lines on bevels, accurate watch proportions, finely detailed dial texture, natural material rendering, premium editorial composition, photorealistic, sharp focus on the subject, 100mm macro lens quality. Omega Constellation archetype: Integrated steel bracelet, iconic side claw details on bezel with Roman numerals, silk-textured opaline dial. No text, no lettering, no numerals that are illegible, no logos, no brand names, no watermarks, no signatures, no distorted or duplicated hands, no incorrect dial markings, no warped bezels, no melted or fused components, no plastic-looking metal, no impossible reflections, no oversaturated colours, no lens flare effects, no excessive glow or particle effects, no cartoon or CGI look, no visible faces, no gold or olive colour grading.

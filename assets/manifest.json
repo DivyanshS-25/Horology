@@ -1,0 +1,45 @@
+{
+  "theme": "Midnight Navy",
+  "version": "1.0.0",
+  "imageStrategy": "Procedural Vector Illustrations & Local Photography Manifest",
+  "defaultRenderMode": "vector",
+  "timepiecePhotography": {
+    "rolex-submariner-date-126610ln": {
+      "front": null,
+      "flank": null,
+      "clasp": null,
+      "movement": null
+    },
+    "rolex-gmt-master-ii-126710blro": {
+      "front": null,
+      "flank": null,
+      "clasp": null,
+      "movement": null
+    },
+    "rolex-daytona-116500ln": {
+      "front": null,
+      "flank": null,
+      "clasp": null,
+      "movement": null
+    },
+    "omega-speedmaster-pro-311-30-42-30-01-001": {
+      "front": null,
+      "flank": null,
+      "clasp": null,
+      "movement": null
+    },
+    "tudor-black-bay-58-m79030n-0001": {
+      "front": null,
+      "flank": null,
+      "clasp": null,
+      "movement": null
+    },
+    "grand-seiko-snowflake-sbga211": {
+      "front": null,
+      "flank": null,
+      "clasp": null,
+      "movement": null
+    }
+  },
+  "instructions": "To replace procedural vector illustrations with licensed high-res macro photography, place images in assets/images/ and provide their relative paths in this manifest."
+}

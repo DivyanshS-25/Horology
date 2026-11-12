@@ -1,0 +1,88 @@
+/* HOROLOGY — CSS Base Layer */
+@layer base {
+  body {
+    background-color: var(--color-bg-base);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    font-size: var(--text-base);
+    font-weight: 400;
+    overflow-x: hidden;
+    position: relative;
+    background-image: 
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.05), transparent 70%),
+      radial-gradient(circle 600px at 100% 40%, rgba(27, 52, 75, 0.25), transparent),
+      radial-gradient(circle 500px at 0% 80%, rgba(16, 25, 35, 0.4), transparent);
+    background-attachment: fixed;
+  }
+
+  /* Custom Precision Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--color-bg-base);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border-default);
+    border-radius: var(--radius-xs);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-accent-primary);
+  }
+
+  ::selection {
+    background-color: var(--color-accent-subtle);
+    color: var(--color-accent-primary);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 3px;
+  }
+
+  /* Typography Headings */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-serif);
+    color: var(--color-text-primary);
+    line-height: var(--leading-tight);
+    font-weight: 500;
+    letter-spacing: var(--tracking-tight);
+  }
+
+  h1 { font-size: var(--text-4xl); }
+  h2 { font-size: var(--text-3xl); }
+  h3 { font-size: var(--text-2xl); }
+  h4 { font-size: var(--text-xl); }
+  h5 { font-size: var(--text-lg); }
+  h6 { font-size: var(--text-base); }
+
+  p {
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* Overlines and Small Caps */
+  .overline {
+    font-family: var(--font-sans);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-widest);
+    color: var(--color-accent-primary);
+  }
+
+  /* Monospace figures */
+  .mono {
+    font-family: var(--font-mono);
+    letter-spacing: -0.02em;
+  }
+
+  /* Hairline Divider */
+  .hairline-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-border-default) 20%, var(--color-border-default) 80%, transparent);
+    margin: var(--space-8) 0;
+    border: none;
+  }
+}

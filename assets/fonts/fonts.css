@@ -1,0 +1,25 @@
+/* HOROLOGY — Local Font Declaration Fallback */
+@font-face {
+  font-family: 'Cormorant Garamond';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: local('Cormorant Garamond'), local('CormorantGaramond-Regular'), serif;
+}
+
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: local('Inter'), local('Inter-Regular'), sans-serif;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: local('JetBrains Mono'), local('JetBrainsMono-Regular'), monospace;
+}
+

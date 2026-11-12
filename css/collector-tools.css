@@ -1,0 +1,806 @@
+/**
+ * HOROLOGY — Collector Tools & Discovery Engine Stylesheet (Phase 08 Obsidian Luxury)
+ * Direction Obsidian Luxury (#050608 / #D4AF37 / #101923)
+ * Scoped styling for:
+ * 1. Saved Wishlist Vault (#/wishlist)
+ * 2. Side-by-Side Comparison Matrix (#/compare)
+ * 3. Guided Watch Finder (#/watch-finder, #/finder)
+ * 4. Recently Viewed Subsystem & Reusable Shelves (#/recently-viewed)
+ */
+
+/* ==========================================================================
+   1. Saved Wishlist Vault
+   ========================================================================== */
+.vault-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.vault-summary-panel {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  padding: var(--space-5) var(--space-6);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-6);
+}
+
+.vault-stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.vault-stat-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-1);
+}
+
+.vault-stat-value {
+  font-family: var(--font-mono);
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+}
+
+.vault-stat-value.accent {
+  color: var(--accent-primary);
+}
+
+.vault-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--space-6);
+}
+
+.vault-toolbar-left,
+.vault-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.select-all-label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.vault-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-xs);
+  background: var(--bg-surface);
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  transition: all var(--transition-fast);
+}
+
+.vault-checkbox:checked {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+}
+
+.vault-checkbox:checked::before {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid var(--bg-primary);
+  border-bottom: 2px solid var(--bg-primary);
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.vault-checkbox:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.wishlist-card-wrapper {
+  position: relative;
+}
+
+.card-select-box {
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(7, 17, 31, 0.75);
+  backdrop-filter: blur(8px);
+  padding: 4px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-subtle);
+}
+
+/* ==========================================================================
+   2. Interactive Watch Comparison Matrix
+   ========================================================================== */
+.compare-container {
+  width: 100%;
+}
+
+.compare-action-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.diff-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-surface);
+  color: var(--text-secondary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.diff-toggle-btn.active {
+  background: var(--accent-subtle);
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+}
+
+.diff-toggle-btn .toggle-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-full);
+  background: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.diff-toggle-btn.active .toggle-indicator {
+  background: var(--accent-primary);
+  box-shadow: 0 0 8px var(--accent-primary);
+}
+
+/* Matrix Table and Sticky Columns */
+.compare-table-wrapper {
+  position: relative;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  margin-bottom: var(--space-8);
+}
+
+.compare-matrix-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  font-size: var(--text-sm);
+}
+
+/* Sticky Specification Header Column */
+.compare-matrix-table .sticky-col {
+  position: sticky;
+  left: 0;
+  z-index: 15;
+  width: 220px;
+  min-width: 220px;
+  max-width: 240px;
+  background: var(--bg-surface);
+  border-right: 1px solid var(--border-strong);
+  padding: var(--space-3) var(--space-4);
+  color: var(--text-secondary);
+  font-weight: var(--font-medium);
+}
+
+.compare-matrix-table thead .sticky-col {
+  z-index: 20;
+  vertical-align: bottom;
+  background: var(--bg-surface);
+}
+
+.compare-matrix-table th.watch-col,
+.compare-matrix-table td.watch-col {
+  min-width: 240px;
+  max-width: 280px;
+  padding: var(--space-3) var(--space-4);
+  border-right: 1px solid var(--border-subtle);
+  scroll-snap-align: start;
+}
+
+.compare-matrix-table th.watch-col {
+  vertical-align: top;
+  padding: var(--space-4);
+  background: var(--bg-primary);
+}
+
+.compare-matrix-table th.empty-slot-col {
+  min-width: 220px;
+  padding: var(--space-4);
+  vertical-align: middle;
+  border-right: 1px solid var(--border-subtle);
+  background: rgba(16, 34, 56, 0.4);
+}
+
+.empty-slot-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-xs);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+/* Watch Column Header Card */
+.compare-card-head {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.compare-remove-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  z-index: 5;
+}
+
+.compare-remove-btn:hover {
+  border-color: #EF4444;
+  color: #EF4444;
+}
+
+.compare-thumb-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.compare-thumb-img {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  transition: transform var(--transition-medium);
+}
+
+.compare-thumb-frame:hover .compare-thumb-img {
+  transform: scale(1.05);
+}
+
+.compare-brand-meta {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.compare-model-link {
+  font-family: var(--font-serif);
+  font-size: var(--text-lg);
+  font-weight: var(--font-semibold);
+  color: var(--text-primary);
+  text-decoration: none;
+  margin: var(--space-1) 0;
+  display: block;
+}
+
+.compare-model-link:hover {
+  color: var(--accent-primary);
+}
+
+.compare-ref-num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.compare-price-val {
+  font-family: var(--font-mono);
+  font-size: var(--text-base);
+  font-weight: var(--font-bold);
+  color: var(--accent-primary);
+  margin-bottom: var(--space-3);
+}
+
+/* Category Dividers in Matrix */
+.matrix-section-row td {
+  background: var(--bg-secondary);
+  padding: var(--space-2) var(--space-4);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-primary);
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.matrix-section-row .sticky-col {
+  background: var(--bg-secondary);
+}
+
+.matrix-data-row td {
+  border-top: 1px solid var(--border-subtle);
+  line-height: 1.5;
+}
+
+/* Highlight Differences */
+.matrix-data-row.diff-active {
+  background: rgba(212, 175, 55, 0.05);
+}
+
+.matrix-data-row.diff-active .sticky-col {
+  color: var(--accent-primary);
+  position: relative;
+}
+
+.matrix-data-row.diff-active .sticky-col::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--accent-primary);
+}
+
+.diff-badge {
+  display: inline-block;
+  padding: 1px 6px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--accent-primary);
+  background: var(--accent-subtle);
+  border-radius: var(--radius-xs);
+  margin-left: var(--space-2);
+  vertical-align: middle;
+}
+
+/* Factual Comparative Insights Card */
+.comparative-insights-card {
+  padding: var(--space-6) var(--space-8);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  margin-top: var(--space-8);
+}
+
+.comparative-insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-4);
+}
+
+.insight-metric-box {
+  padding: var(--space-4);
+  background: var(--bg-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+}
+
+.insight-metric-title {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--accent-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.insight-metric-prose {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Quick Watch Picker Modal */
+.watch-picker-dialog {
+  max-width: 720px;
+  width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.watch-picker-header {
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.watch-picker-body {
+  padding: var(--space-5) var(--space-6);
+  overflow-y: auto;
+  flex: 1;
+}
+
+.watch-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-4);
+}
+
+.watch-picker-item {
+  padding: var(--space-3);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  display: flex;
+  flex-direction: column;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.watch-picker-item:hover {
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   3. Guided Watch Finder (9-Step Wizard)
+   ========================================================================== */
+.finder-wizard-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.finder-stepper-header {
+  margin-bottom: var(--space-8);
+}
+
+.finder-step-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.finder-progress-track {
+  height: 4px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin-bottom: var(--space-4);
+}
+
+.finder-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), #B2D5FC);
+  transition: width 300ms ease;
+}
+
+.finder-step-pills {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.finder-step-pill {
+  flex: 1;
+  min-width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.finder-step-pill.completed {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.finder-step-pill.active {
+  background: var(--accent-primary);
+  border-color: var(--accent-primary);
+  color: var(--bg-primary);
+  font-weight: var(--font-bold);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+}
+
+/* Question Stage Card */
+.finder-question-card {
+  padding: var(--space-8);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-card);
+  margin-bottom: var(--space-8);
+}
+
+.finder-question-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: var(--space-2);
+}
+
+.finder-question-subtitle {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto var(--space-8);
+}
+
+.finder-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.finder-option-btn {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-4) var(--space-5);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  min-height: 56px;
+  position: relative;
+}
+
+.finder-option-btn:hover {
+  border-color: var(--accent-primary);
+  background: rgba(38, 58, 80, 0.4);
+}
+
+.finder-option-btn.selected {
+  border-color: var(--accent-primary);
+  background: var(--accent-subtle);
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.25);
+}
+
+.finder-option-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.finder-option-label {
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--font-bold);
+  color: var(--text-primary);
+}
+
+.finder-option-btn.selected .finder-option-label {
+  color: var(--accent-primary);
+}
+
+.finder-radio-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.finder-option-btn.selected .finder-radio-indicator {
+  border-color: var(--accent-primary);
+}
+
+.finder-option-btn.selected .finder-radio-indicator::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--accent-primary);
+}
+
+.finder-option-desc {
+  font-size: var(--text-xs);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+.finder-nav-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  padding-top: var(--space-6);
+  border-top: 1px solid var(--border-subtle);
+}
+
+/* Results View */
+.finder-results-header {
+  text-align: center;
+  margin-bottom: var(--space-8);
+}
+
+.finder-relaxation-notice {
+  padding: var(--space-4) var(--space-5);
+  background: rgba(251, 191, 36, 0.1);
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  border-radius: var(--radius-xs);
+  color: #FCD34D;
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.finder-match-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 3px 8px;
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--font-bold);
+  border-radius: var(--radius-xs);
+  letter-spacing: 0.05em;
+}
+
+.finder-match-badge.perfect {
+  background: rgba(52, 211, 153, 0.15);
+  color: #34D399;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.finder-match-badge.high {
+  background: var(--accent-subtle);
+  color: var(--accent-primary);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.finder-reasons-list {
+  margin: var(--space-3) 0 var(--space-4);
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.finder-reason-item {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.finder-reason-item::before {
+  content: "•";
+  color: var(--accent-primary);
+  font-size: var(--text-sm);
+}
+
+/* ==========================================================================
+   4. Recently Viewed Subsystem & Reusable Shelves
+   ========================================================================= */
+.recently-viewed-section {
+  margin-top: var(--space-16);
+  padding-top: var(--space-10);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.recent-shelf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.recent-shelf-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-6);
+}
+
+/* Mobile Responsiveness for Matrices and Wizards */
+@media (max-width: 768px) {
+  .compare-matrix-table .sticky-col {
+    width: 150px;
+    min-width: 150px;
+    font-size: var(--text-xs);
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .compare-matrix-table th.watch-col,
+  .compare-matrix-table td.watch-col {
+    min-width: 200px;
+    max-width: 220px;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .finder-question-card {
+    padding: var(--space-5) var(--space-4);
+  }
+
+  .finder-question-title {
+    font-size: var(--text-2xl);
+  }
+
+  .finder-options-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
