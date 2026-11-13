@@ -9,7 +9,7 @@ import { createBreadcrumb, ICONS } from '../js/components.js';
 import { MovementSimulator, MOVEMENT_PARTS } from '../js/features/movementSim.js';
 import { TimegrapherScreen } from '../js/features/timegrapher.js';
 import { playMechanicalClick, playWindingTick } from '../js/audio.js';
-import { MechanicalChronometerWidget, DiverBezelWidget } from '../js/features/motion.js';
+import { MechanicalChronometerWidget, DiverBezelWidget, CrownWindingWidget } from '../js/features/motion.js';
 
 export const title = 'Movement Lab';
 
@@ -17,6 +17,7 @@ let currentSimulator = null;
 let currentTimegrapher = null;
 let currentChronometer = null;
 let currentBezel = null;
+let currentCrownWinding = null;
 let parallaxCleanup = null;
 
 export async function render(ctx) {
@@ -70,9 +71,9 @@ export async function render(ctx) {
             </div>
           </div>
 
-          <div class="col-span-6 flex flex-col items-center justify-center" style="min-width: 0; max-width: 100%;">
-            <div style="position: relative; width: 100%; max-width: 360px; aspect-ratio: 1/1; background: radial-gradient(circle at 50% 50%, #152435 0%, #080D13 85%); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 30px rgba(0,0,0,0.8); box-sizing: border-box; overflow: hidden;">
-              <canvas id="balanceCanvas" width="360" height="360" style="width: 100%; height: 100%; max-width: 100%; display: block;"></canvas>
+          <div class="col-span-6 flex flex-col items-center justify-center gap-6" style="min-width: 0; max-width: 100%;">
+            <div style="position: relative; width: 100%; max-width: 340px; aspect-ratio: 1/1; background: radial-gradient(circle at 50% 50%, #152435 0%, #080D13 85%); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 30px rgba(0,0,0,0.8); box-sizing: border-box; overflow: hidden;">
+              <canvas id="balanceCanvas" width="340" height="340" style="width: 100%; height: 100%; max-width: 100%; display: block;"></canvas>
               <div style="position: absolute; bottom: 12px; left: 16px; font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: 1px;">
                 CAL. 3235 OSCILLATOR
               </div>
@@ -80,6 +81,9 @@ export async function render(ctx) {
                 1.0x LIVE
               </div>
             </div>
+
+            <!-- Tactile 3D Fluted Crown & Mainspring Winding Assembly -->
+            <div id="crownWindingStageContainer" style="width: 100%; max-width: 340px;"></div>
           </div>
         </div>
       </div>
@@ -368,6 +372,24 @@ export function mount(ctx) {
   if (bezelStage) {
     currentBezel = new DiverBezelWidget(bezelStage);
   }
+
+  // 5. 3D Fluted Crown-Winding & Mainspring Autonomy Widget
+  const crownStage = document.getElementById('crownWindingStageContainer');
+  if (crownStage) {
+    currentCrownWinding = new CrownWindingWidget(crownStage, {
+      initialHours: 48,
+      onAmplitudeChanged: (amplitude, hours) => {
+        if (currentSimulator) {
+          currentSimulator.setAmplitude(amplitude);
+          if (amplitude === 0) {
+            currentSimulator.stop();
+          } else if (!currentSimulator.isRunning) {
+            currentSimulator.start();
+          }
+        }
+      }
+    });
+  }
 }
 
 export function unmount() {
@@ -385,5 +407,8 @@ export function unmount() {
   }
   if (currentBezel) {
     currentBezel = null;
+  }
+  if (currentCrownWinding) {
+    currentCrownWinding = null;
   }
 }

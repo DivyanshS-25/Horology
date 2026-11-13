@@ -12,11 +12,12 @@ import { escapeHTML, formatPrice } from '../js/utilities.js';
 import { store } from '../js/state.js';
 import { quickView } from '../js/quick-view.js';
 import { playMechanicalClick, playWindingTick } from '../js/audio.js';
-import { MechanicalChronometerWidget } from '../js/features/motion.js';
+import { Hero3DExplodedCalibre, Vault3DOrbitWheel } from '../js/features/motion.js';
 
 export const title = 'Beyond Time. Beyond Ordinary.';
 
-let homeChronometer = null;
+let heroCalibre = null;
+let vaultOrbit = null;
 
 export async function render(ctx) {
   const heroPrimaryImg = resolveAsset('HZ-HERO-001');
@@ -136,12 +137,12 @@ export async function render(ctx) {
               </div>
             </div>
 
-            <!-- Hero Live Chronometer Instrument -->
+            <!-- Hero 3D Multi-Layered Exploded Watch Calibre Showcase -->
             <div class="home-hero-chronometer-col hide-mobile" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
               <div style="font-family: var(--font-mono); font-size: 10px; color: var(--accent-primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">
-                &#x2316; Live Escapement Telemetry
+                &#x2316; 3D Multi-Layered Calibre Showcase
               </div>
-              <div id="homeHeroChronometerStage" style="width: 100%; max-width: 300px;"></div>
+              <div id="hero3DCalibreStageContainer" style="width: 100%; max-width: 360px;"></div>
             </div>
           </div>
         </div>
@@ -266,16 +267,32 @@ export async function render(ctx) {
                 <span>Active Vault Catalog &bull; Demonstrative Verification Dossiers</span>
               </div>
             </div>
-            <a href="#/collection" class="btn btn-outline">
-              <span>View Complete Vault (24)</span>
-              ${ICONS.arrowRight}
-            </a>
+
+            <div class="flex items-center gap-3 flex-wrap">
+              <!-- View Mode Toggle: Standard Grid vs 3D Vault Orbit -->
+              <div class="vault-view-toggle-bar" role="group" aria-label="Vault View Modes">
+                <button type="button" class="btn btn-outline btn-xs active" id="btnVaultViewGrid">
+                  <span>Standard Grid</span>
+                </button>
+                <button type="button" class="btn btn-outline btn-xs" id="btnVaultViewOrbit">
+                  <span>&#x2741; 3D Vault Orbit</span>
+                </button>
+              </div>
+
+              <a href="#/collection" class="btn btn-outline">
+                <span>View Complete Vault (24)</span>
+                ${ICONS.arrowRight}
+              </a>
+            </div>
           </div>
 
-          <!-- Editorial Asymmetric Product Showcase -->
-          <div class="watch-grid">
+          <!-- Standard Grid View Container -->
+          <div class="watch-grid" id="vaultGridContainer">
             ${supportingWatches.map(watch => createWatchCard(watch)).join('')}
           </div>
+
+          <!-- 3D Cylindrical Orbit Wheel Container (Toggled via button) -->
+          <div id="vaultOrbitContainer" style="display: none; width: 100%;"></div>
         </div>
       </section>
 
@@ -607,16 +624,49 @@ export function mount(ctx) {
     }
   });
 
-  // 6. Mount Live 28,800 vph Chronometer in Hero
-  const heroChronoStage = document.getElementById('homeHeroChronometerStage');
-  if (heroChronoStage) {
-    homeChronometer = new MechanicalChronometerWidget(heroChronoStage, { frequency: 28800 });
+  // 6. Mount Hero 3D Multi-Layered Exploded Calibre Showcase
+  const calibreContainer = document.getElementById('hero3DCalibreStageContainer');
+  if (calibreContainer) {
+    heroCalibre = new Hero3DExplodedCalibre(calibreContainer);
+  }
+
+  // 7. Mount 3D Vault Orbit Carousel & View Mode Toggles
+  const btnGrid = document.getElementById('btnVaultViewGrid');
+  const btnOrbit = document.getElementById('btnVaultViewOrbit');
+  const gridBox = document.getElementById('vaultGridContainer');
+  const orbitBox = document.getElementById('vaultOrbitContainer');
+
+  if (btnGrid && btnOrbit && gridBox && orbitBox) {
+    btnGrid.addEventListener('click', () => {
+      btnGrid.classList.add('active');
+      btnOrbit.classList.remove('active');
+      gridBox.style.display = 'grid';
+      orbitBox.style.display = 'none';
+      playMechanicalClick(2200, 0.015);
+    });
+
+    btnOrbit.addEventListener('click', () => {
+      btnOrbit.classList.add('active');
+      btnGrid.classList.remove('active');
+      gridBox.style.display = 'none';
+      orbitBox.style.display = 'block';
+
+      if (!vaultOrbit) {
+        const orbitWatches = WATCHES.filter(w => w.featured).slice(0, 6);
+        vaultOrbit = new Vault3DOrbitWheel(orbitBox, orbitWatches.length > 0 ? orbitWatches : WATCHES.slice(0, 6));
+      }
+      playMechanicalClick(2600, 0.02);
+    });
   }
 }
 
 export function unmount() {
-  if (homeChronometer) {
-    homeChronometer.destroy();
-    homeChronometer = null;
+  if (heroCalibre) {
+    heroCalibre.destroy();
+    heroCalibre = null;
+  }
+  if (vaultOrbit) {
+    vaultOrbit.destroy();
+    vaultOrbit = null;
   }
 }

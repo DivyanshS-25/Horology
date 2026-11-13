@@ -31,30 +31,92 @@
 .btn-primary {
   background-color: var(--accent-primary);
   color: #050608;
-  border-color: var(--accent-primary);
+  border-color: #b89327;
   font-weight: 600;
-  box-shadow: 0 4px 16px rgba(212, 175, 55, 0.25);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 0 #8c6f14, 0 6px 18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), background-color 0.2s ease;
+  will-change: transform, box-shadow;
 }
 
 .btn-primary:hover {
   background-color: var(--accent-hover);
-  border-color: var(--accent-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(212, 175, 55, 0.4);
+  border-color: #cda835;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #8c6f14, 0 10px 24px rgba(212, 175, 55, 0.35);
+}
+
+.btn-primary:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #8c6f14, 0 3px 8px rgba(0, 0, 0, 0.4);
 }
 
 .btn-gold {
   background: var(--gradient-gold-button);
   color: #050608;
-  border-color: var(--accent-primary);
+  border-color: #caa538;
   font-weight: 600;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 0 #8c6f14, 0 8px 22px rgba(212, 175, 55, 0.35);
+  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), filter 0.2s ease;
+  will-change: transform, box-shadow;
 }
 
 .btn-gold:hover {
-  filter: brightness(1.1);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 30px rgba(212, 175, 55, 0.5);
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #8c6f14, 0 14px 30px rgba(212, 175, 55, 0.5);
+}
+
+.btn-gold:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #8c6f14, 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* 3D Specular Highlight Sheen on Buttons (Tracks Cursor) */
+.btn-primary::after,
+.btn-gold::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle 90px at var(--btn-x, 50%) var(--btn-y, 50%), rgba(255, 255, 255, 0.32) 0%, transparent 80%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  mix-blend-mode: overlay;
+}
+
+.btn-primary:hover::after,
+.btn-gold:hover::after {
+  opacity: 1;
+}
+
+/* 3D Floating Glassmorphic Tooltip */
+.glass-tooltip-3d {
+  position: absolute;
+  padding: 8px 14px;
+  background: rgba(6, 11, 16, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  border-radius: var(--radius-xs);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 12px rgba(212, 175, 55, 0.15);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  pointer-events: none;
+  transform: translateZ(24px);
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s cubic-bezier(0.2, 0.8, 0.4, 1);
+}
+
+.has-glass-tooltip:hover .glass-tooltip-3d {
+  opacity: 1;
+  transform: translateZ(30px) translateY(-4px);
 }
 
 .btn-secondary {
@@ -121,26 +183,229 @@
 }
 
 /* ==========================================================================
-   Curated Vault Watch Cards (Phase 08 Redesign)
+   Curated Vault Watch Cards (Phase 08 Redesign + 3D Flip Architecture)
    ========================================================================== */
 .card-watch {
-  background-color: var(--bg-card);
-  border: 1px solid var(--border-subtle);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  perspective: 1200px;
+  position: relative;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.card-watch-3d-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.75s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+}
+
+.card-watch.is-flipped .card-watch-3d-flipper {
+  transform: rotateY(180deg);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   border-radius: var(--radius-sm);
   overflow: hidden;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base), transform var(--transition-base);
+  box-sizing: border-box;
+}
+
+.card-face-front {
+  transform: rotateY(0deg);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
-  position: relative;
-  box-sizing: border-box;
-  transition: transform var(--transition-base), border-color var(--transition-base), box-shadow var(--transition-base);
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-.card-watch:hover {
+.card-watch:hover .card-face-front {
   transform: translateY(-4px);
   border-color: rgba(212, 175, 55, 0.35);
   box-shadow: var(--shadow-card-hover);
+}
+
+/* Floating Elevated Status Badge (3D translateZ) */
+.card-face-front .card-watch-status {
+  transform: translateZ(24px);
+  transform-style: preserve-3d;
+  z-index: 10;
+}
+
+/* Back Face: Exhibition Sapphire Caseback */
+.card-face-back {
+  position: absolute;
+  inset: 0;
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-5);
+  background: radial-gradient(circle at 50% 25%, #101925 0%, #06090f 100%);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 40px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+}
+
+.card-watch.is-flipped .card-face-back {
+  z-index: 3;
+  border-color: rgba(212, 175, 55, 0.65);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(212, 175, 55, 0.25);
+}
+
+/* Exhibition Caseback Components */
+.caseback-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  gap: var(--space-3);
+}
+
+.caseback-porthole {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 40%, #152233 0%, #080d14 75%);
+  border: 4px dashed rgba(212, 175, 55, 0.4);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), 0 0 0 2px #050608, 0 6px 18px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.caseback-porthole::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 8px, rgba(212, 175, 55, 0.05) 9px, transparent 10px);
+}
+
+.caseback-rotor-ring {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 50%;
+  border-top: 3px solid #D4AF37;
+  border-right: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 3px solid transparent;
+  animation: balanceRotate 3s infinite ease-in-out;
+}
+
+.caseback-jewels-cluster {
+  display: flex;
+  gap: 8px;
+  z-index: 2;
+  margin-bottom: 6px;
+}
+
+.caseback-jewel {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f43f5e 0%, #881337 100%);
+  border: 1px solid #D4AF37;
+  box-shadow: 0 0 6px rgba(244, 63, 94, 0.6);
+}
+
+.caseback-aperture-label {
+  text-align: center;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.caseback-aperture-label span {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.12em;
+}
+
+.caseback-aperture-label strong {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-primary);
+  letter-spacing: 0.08em;
+}
+
+.caseback-telemetry-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+  background: rgba(5, 6, 8, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xs);
+  padding: var(--space-3);
+}
+
+.caseback-metric-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.caseback-metric-item .metric-label {
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+}
+
+.caseback-metric-item .metric-value {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.caseback-metric-item .metric-sub {
+  font-family: var(--font-mono);
+  font-size: 0.56rem;
+  color: var(--text-muted);
+}
+
+.caseback-power-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 3px;
+}
+
+.caseback-power-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #D4AF37, #38f2af);
+  border-radius: 2px;
+}
+
+.caseback-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .card-watch-media {

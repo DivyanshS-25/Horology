@@ -27,7 +27,8 @@ export const ICONS = {
   loupe: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>`,
   camera: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>`,
   mail: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>`,
-  seal: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>`
+  seal: `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>`,
+  flip: `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>`
 };
 
 /**
@@ -188,78 +189,144 @@ export function createWatchCard(watch, { showActions = true, compact = false } =
 
   return `
     <article class="card-watch ${compact ? 'card-watch-compact' : ''} sapphire-refraction" data-watch-id="${watch.id}">
-      <div class="card-watch-media">
-        <!-- Specular Sapphire Glare Sheen -->
-        <div class="card-sapphire-glare" aria-hidden="true"></div>
+      <div class="card-watch-3d-flipper">
+        <!-- FRONT FACE: Watch Dial & Primary Specifications -->
+        <div class="card-face card-face-front">
+          <div class="card-watch-media">
+            <!-- Specular Sapphire Glare Sheen -->
+            <div class="card-sapphire-glare" aria-hidden="true"></div>
 
-        <!-- Status & Telemetry Toggle Header -->
-        <div class="card-watch-status">
-          ${createStatusBadge(inspectionBadge)}
-        </div>
+            <!-- Status & Telemetry Toggle Header (Elevated in 3D) -->
+            <div class="card-watch-status">
+              ${createStatusBadge(inspectionBadge)}
+            </div>
 
-        <!-- Action Controls -->
-        ${showActions ? `
-          <div class="card-watch-actions">
-            <button type="button" class="action-badge-btn ${wishActiveClass}" data-action="toggle-wishlist" data-id="${watch.id}" aria-label="Save ${escapeHTML(watch.model)} to Wishlist" title="Save to Wishlist">
-              ${wishlistIcon}
+            <!-- Action Controls -->
+            ${showActions ? `
+              <div class="card-watch-actions">
+                <button type="button" class="action-badge-btn card-flip-btn" data-action="flip-card" data-id="${watch.id}" aria-label="3D Flip to Exhibition Caseback" title="3D Flip to Exhibition Caseback">
+                  ${ICONS.flip}
+                </button>
+                <button type="button" class="action-badge-btn ${wishActiveClass}" data-action="toggle-wishlist" data-id="${watch.id}" aria-label="Save ${escapeHTML(watch.model)} to Wishlist" title="Save to Wishlist">
+                  ${wishlistIcon}
+                </button>
+                <button type="button" class="action-badge-btn ${compActiveClass}" data-action="toggle-compare" data-id="${watch.id}" aria-label="Compare ${escapeHTML(watch.model)}" title="Compare Timepiece">
+                  ${ICONS.scale}
+                </button>
+                <button type="button" class="action-badge-btn telemetry-toggle-btn" data-action="toggle-telemetry" data-id="${watch.id}" aria-label="Inspect Timing Telemetry" title="Timing Telemetry">
+                  ${ICONS.pulse}
+                </button>
+              </div>
+            ` : ''}
+
+            <!-- Product Image Stage with Depth Backdrop -->
+            <a href="${detailUrl}" class="card-watch-img-link" aria-label="View details of ${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}">
+              <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="card-watch-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
+            </a>
+
+            <!-- Quick View Slide-Up Trigger -->
+            <button type="button" class="card-watch-quickview-btn" data-action="quick-view" data-id="${watch.id}" aria-label="Quick View of ${escapeHTML(watch.model)}">
+              ${ICONS.eye}
+              <span>Quick View</span>
             </button>
-            <button type="button" class="action-badge-btn ${compActiveClass}" data-action="toggle-compare" data-id="${watch.id}" aria-label="Compare ${escapeHTML(watch.model)}" title="Compare Timepiece">
-              ${ICONS.scale}
-            </button>
-            <button type="button" class="action-badge-btn telemetry-toggle-btn" data-action="toggle-telemetry" data-id="${watch.id}" aria-label="Inspect Timing Telemetry" title="Timing Telemetry">
-              ${ICONS.pulse}
-            </button>
+
+            <!-- Timing Telemetry Drawer (Slides Up from Bottom) -->
+            <div class="card-telemetry-drawer" id="telemetry-drawer-${watch.id}">
+              ${telemetryHtml}
+            </div>
           </div>
-        ` : ''}
 
-        <!-- Product Image Stage with Depth Backdrop -->
-        <a href="${detailUrl}" class="card-watch-img-link" aria-label="View details of ${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}">
-          <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="card-watch-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
-        </a>
+          <div class="card-watch-body">
+            <div class="flex items-center justify-between mb-1">
+              <span class="card-watch-brand">${escapeHTML(watch.brand)}</span>
+              <span class="card-watch-condition-pill">${escapeHTML(condition)}</span>
+            </div>
 
-        <!-- Quick View Slide-Up Trigger -->
-        <button type="button" class="card-watch-quickview-btn" data-action="quick-view" data-id="${watch.id}" aria-label="Quick View of ${escapeHTML(watch.model)}">
-          ${ICONS.eye}
-          <span>Quick View</span>
-        </button>
+            <h3 class="card-watch-title">
+              <a href="${detailUrl}">${escapeHTML(watch.model)}</a>
+            </h3>
 
-        <!-- Timing Telemetry Drawer (Slides Up from Bottom) -->
-        <div class="card-telemetry-drawer" id="telemetry-drawer-${watch.id}">
-          ${telemetryHtml}
-        </div>
-      </div>
+            <p class="card-watch-ref">Ref. ${escapeHTML(watch.reference || watch.referenceNumber || 'N/A')} &bull; ${watch.year || 2022}</p>
 
-      <div class="card-watch-body">
-        <div class="flex items-center justify-between mb-1">
-          <span class="card-watch-brand">${escapeHTML(watch.brand)}</span>
-          <span class="card-watch-condition-pill">${escapeHTML(condition)}</span>
-        </div>
+            <!-- Technical Spec Pills -->
+            <div class="card-watch-specs">
+              <span>${caseDiameter} mm</span>
+              <span>&bull;</span>
+              <span>${escapeHTML(movement)}</span>
+              <span>&bull;</span>
+              <span>${escapeHTML(docStatus)}</span>
+            </div>
 
-        <h3 class="card-watch-title">
-          <a href="${detailUrl}">${escapeHTML(watch.model)}</a>
-        </h3>
-
-        <p class="card-watch-ref">Ref. ${escapeHTML(watch.reference || watch.referenceNumber || 'N/A')} &bull; ${watch.year || 2022}</p>
-
-        <!-- Technical Spec Pills -->
-        <div class="card-watch-specs">
-          <span>${caseDiameter} mm</span>
-          <span>&bull;</span>
-          <span>${escapeHTML(movement)}</span>
-          <span>&bull;</span>
-          <span>${escapeHTML(docStatus)}</span>
-        </div>
-
-        <!-- Card Footer -->
-        <div class="card-watch-footer">
-          <div>
-            <div class="card-watch-price">${priceDisplay}</div>
-            <span class="card-watch-demo-label">Demo Record</span>
+            <!-- Card Footer with Examine and Flip Buttons -->
+            <div class="card-watch-footer">
+              <div>
+                <div class="card-watch-price">${priceDisplay}</div>
+                <span class="card-watch-demo-label">Demo Record</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <button type="button" class="btn btn-ghost btn-xs card-flip-btn" data-action="flip-card" data-id="${watch.id}" title="3D Flip to Exhibition Caseback">
+                  <span>&#x21BA; Caseback</span>
+                </button>
+                <a href="${detailUrl}" class="btn btn-outline btn-sm" aria-label="View details of ${escapeHTML(watch.model)}">
+                  <span>Examine</span>
+                  ${ICONS.arrowRight}
+                </a>
+              </div>
+            </div>
           </div>
-          <a href="${detailUrl}" class="btn btn-outline btn-sm" aria-label="View details of ${escapeHTML(watch.model)}">
-            <span>Examine</span>
-            ${ICONS.arrowRight}
-          </a>
+        </div>
+
+        <!-- BACK FACE: 3D Exhibition Sapphire Caseback -->
+        <div class="card-face card-face-back">
+          <div class="caseback-view">
+            <div class="caseback-porthole">
+              <div class="caseback-rotor-ring"></div>
+              <div class="caseback-jewels-cluster">
+                <span class="caseback-jewel"></span>
+                <span class="caseback-jewel"></span>
+                <span class="caseback-jewel"></span>
+              </div>
+              <div class="caseback-aperture-label">
+                <span>EXHIBITION CASEBACK</span>
+                <strong>${escapeHTML(watch.calibre || watch.specifications?.movement?.calibre || 'CALIBRE 3235')}</strong>
+              </div>
+            </div>
+
+            <div class="caseback-telemetry-grid">
+              <div class="caseback-metric-item">
+                <span class="metric-label">FREQUENCY</span>
+                <span class="metric-value text-accent">28,800 vph</span>
+                <span class="metric-sub">4.0 Hz Beat</span>
+              </div>
+              <div class="caseback-metric-item">
+                <span class="metric-label">JEWELS</span>
+                <span class="metric-value">${watch.specifications?.movement?.jewels || 31}</span>
+                <span class="metric-sub">Synthetic Rubies</span>
+              </div>
+              <div class="caseback-metric-item">
+                <span class="metric-label">POWER RESERVE</span>
+                <span class="metric-value">${escapeHTML(watch.specifications?.movement?.powerReserve || '70 Hours')}</span>
+                <div class="caseback-power-bar">
+                  <div class="caseback-power-fill" style="width: 85%;"></div>
+                </div>
+              </div>
+              <div class="caseback-metric-item">
+                <span class="metric-label">WITSCHI TIMING</span>
+                <span class="metric-value text-verified">+1.8 s/d</span>
+                <span class="metric-sub">Amp 286&deg; &bull; Err 0.1ms</span>
+              </div>
+            </div>
+
+            <div class="caseback-footer">
+              <button type="button" class="btn btn-outline btn-xs card-flip-back-btn" data-action="flip-card-back" data-id="${watch.id}">
+                <span>&#x21BA; Return to Dial</span>
+              </button>
+              <a href="${detailUrl}" class="btn btn-primary btn-xs">
+                <span>Dossier</span>
+                ${ICONS.arrowRight}
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </article>
