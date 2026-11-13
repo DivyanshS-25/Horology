@@ -91,10 +91,14 @@ code, kbd, samp, pre,
   line-height: 1.6;
   color: var(--text-secondary);
   font-weight: 300;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .body-muted {
-  color: var(--text-muted);
+  color: var(--text-secondary);
+  opacity: 1;
 }
 
 .text-accent {

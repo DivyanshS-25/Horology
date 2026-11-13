@@ -42,7 +42,8 @@
 .desktop-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-8);
+  gap: var(--space-6);
+  flex-wrap: nowrap;
 }
 
 .nav-link {
@@ -59,6 +60,8 @@
   align-items: center;
   gap: 6px;
   text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .nav-link:hover {

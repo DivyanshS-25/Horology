@@ -36,9 +36,9 @@ export async function render(ctx) {
       </div>
 
       <!-- Interactive Balance Wheel & Escapement Simulation -->
-      <div class="p-8 bg-surface border mb-12" style="border-color: var(--border-subtle); border-radius: var(--radius-sm); position: relative; overflow: hidden;">
-        <div class="grid-12 gap-8 items-center">
-          <div class="col-span-6">
+      <div class="p-8 bg-surface border mb-12" style="border-color: var(--border-subtle); border-radius: var(--radius-sm); position: relative; overflow: hidden; width: 100%; max-width: 100%; box-sizing: border-box;">
+        <div class="grid-12 gap-8 items-center" style="width: 100%; max-width: 100%; min-width: 0;">
+          <div class="col-span-6" style="min-width: 0; max-width: 100%;">
             <span class="overline" style="color: var(--accent-primary);">Harmonic Oscillation</span>
             <h2 class="heading-2 mb-3">Free-Sprung Balance Wheel</h2>
             <p class="body-muted text-sm leading-relaxed mb-4">
@@ -51,7 +51,7 @@ export async function render(ctx) {
               <button class="btn btn-outline btn-sm" id="btnSimPause" data-speed="pause" style="font-size: 11px;">Freeze Frame</button>
             </div>
 
-            <div class="p-4 bg-secondary border" style="border-color: var(--border-hairline); border-radius: var(--radius-xs);">
+            <div class="p-4 bg-secondary border" style="border-color: var(--border-hairline); border-radius: var(--radius-xs); width: 100%; max-width: 100%; box-sizing: border-box;">
               <div class="flex justify-between items-center mb-2">
                 <span class="font-mono text-xs text-muted">Oscillation Frequency</span>
                 <span class="font-mono text-xs font-bold" style="color: var(--accent-primary);">28,800 vph / 4.0 Hz</span>
@@ -67,9 +67,9 @@ export async function render(ctx) {
             </div>
           </div>
 
-          <div class="col-span-6 flex flex-col items-center justify-center">
-            <div style="position: relative; width: 100%; max-width: 380px; aspect-ratio: 1/1; background: radial-gradient(circle at 50% 50%, #152435 0%, #080D13 85%); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 30px rgba(0,0,0,0.8);">
-              <canvas id="balanceCanvas" width="360" height="360" style="width: 100%; height: 100%; display: block;"></canvas>
+          <div class="col-span-6 flex flex-col items-center justify-center" style="min-width: 0; max-width: 100%;">
+            <div style="position: relative; width: 100%; max-width: 360px; aspect-ratio: 1/1; background: radial-gradient(circle at 50% 50%, #152435 0%, #080D13 85%); border: 1px solid var(--border-hairline); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; box-shadow: inset 0 0 30px rgba(0,0,0,0.8); box-sizing: border-box; overflow: hidden;">
+              <canvas id="balanceCanvas" width="360" height="360" style="width: 100%; height: 100%; max-width: 100%; display: block;"></canvas>
               <div style="position: absolute; bottom: 12px; left: 16px; font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: 1px;">
                 CAL. 3235 OSCILLATOR
               </div>
@@ -82,14 +82,14 @@ export async function render(ctx) {
       </div>
 
       <!-- Six Pillars of Mechanical Calibres -->
-      <div class="p-8 bg-surface border mb-12" style="border-color: var(--border-subtle); border-radius: var(--radius-sm);">
+      <div class="p-8 bg-surface border mb-12" style="border-color: var(--border-subtle); border-radius: var(--radius-sm); width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden;">
         <div class="section-header text-center mb-8">
           <span class="section-kicker">Mechanical Architecture</span>
           <h2 class="heading-2">Six Pillars of Mechanical Calibres</h2>
         </div>
 
-        <div class="feature-grid">
-          <div class="p-6 bg-secondary border" style="border-color: var(--border-subtle); border-radius: var(--radius-xs);">
+        <div class="feature-grid" style="width: 100%; max-width: 100%; box-sizing: border-box;">
+          <div class="p-6 bg-secondary border" style="border-color: var(--border-subtle); border-radius: var(--radius-xs); min-width: 0; box-sizing: border-box;">
             <div class="mb-3 font-mono text-xs font-bold" style="color: var(--accent-primary);">01 / POWER SOURCE</div>
             <h4 class="font-serif text-xl text-primary mb-2">Mainspring &amp; Barrel</h4>
             <p class="body-muted text-sm leading-relaxed">
@@ -140,8 +140,8 @@ export async function render(ctx) {
       </div>
 
       <!-- Live Witschi Timegrapher Simulator -->
-      <div class="grid-12 gap-8 items-center mb-12">
-        <div class="col-span-6">
+      <div class="grid-12 gap-8 items-center mb-12" style="width: 100%; max-width: 100%; min-width: 0; box-sizing: border-box;">
+        <div class="col-span-6" style="min-width: 0; max-width: 100%; box-sizing: border-box;">
           <span class="section-kicker">Diagnostic Telemetry</span>
           <h2 class="heading-2 mb-3">Live Witschi Timegrapher Simulator</h2>
           <p class="body-muted mb-4 text-sm leading-relaxed">
@@ -155,7 +155,7 @@ export async function render(ctx) {
             <button class="btn btn-outline btn-sm timegrapher-pos-btn" data-pos="6H" data-rate="2" data-amp="262" data-err="0.2" style="font-size: 11px;">Crown Left (+2 s/d)</button>
           </div>
 
-          <div class="spec-list">
+          <div class="spec-list" style="width: 100%; max-width: 100%;">
             <div class="spec-row py-3">
               <div>
                 <strong class="text-primary block">Daily Rate (s/d)</strong>
@@ -177,18 +177,18 @@ export async function render(ctx) {
           </div>
         </div>
 
-        <div class="col-span-6 p-6 bg-surface border" style="border-color: var(--border-strong); border-radius: var(--radius-sm); position: relative;">
+        <div class="col-span-6 p-6 bg-surface border" style="border-color: var(--border-strong); border-radius: var(--radius-sm); position: relative; min-width: 0; max-width: 100%; box-sizing: border-box; overflow: hidden;">
           <div class="flex items-center justify-between mb-4">
             <span class="overline" style="color: var(--accent-primary);">Witschi Chronoscope S1</span>
             <span class="badge badge-verified" id="telemetryStatusBadge">Optimal State</span>
           </div>
 
           <!-- Timegrapher Screen Canvas -->
-          <div style="background: #04080D; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs); padding: 8px; margin-bottom: 16px;">
-            <canvas id="timegrapherCanvas" width="460" height="180" style="width: 100%; height: 180px; display: block;"></canvas>
+          <div style="background: #04080D; border: 1px solid var(--border-hairline); border-radius: var(--radius-xs); padding: 8px; margin-bottom: 16px; width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden;">
+            <canvas id="timegrapherCanvas" width="460" height="180" style="width: 100%; max-width: 100%; height: 180px; display: block;"></canvas>
           </div>
 
-          <div class="grid-3 gap-3 text-center py-2">
+          <div class="grid-3 gap-3 text-center py-2" style="width: 100%; max-width: 100%; box-sizing: border-box;">
             <div class="p-3 bg-secondary border" style="border-color: var(--border-hairline); border-radius: var(--radius-xs);">
               <span class="text-xs text-muted font-mono block mb-1">RATE</span>
               <span class="font-mono text-lg font-bold" id="displayRate" style="color: var(--accent-primary);">+2 s/d</span>

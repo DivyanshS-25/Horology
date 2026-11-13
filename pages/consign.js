@@ -80,16 +80,16 @@ function renderLandingPage() {
 
       <!-- A. Cinematic Hero -->
       <section class="mb-16">
-        <div class="p-8 md:p-12 bg-surface border relative overflow-hidden" style="border-color: var(--border-subtle); border-radius: var(--radius-sm); min-height: 420px; display: flex; align-items: center;">
-          <div style="position: absolute; top:0; right:0; bottom:0; left:0; background: url('${heroBg}') center/cover no-repeat; opacity: 0.18; pointer-events: none;"></div>
-          <div style="position: absolute; top:0; right:0; bottom:0; left:0; background: radial-gradient(circle at 30% 50%, rgba(7, 17, 31, 0.95) 0%, rgba(7, 17, 31, 0.75) 100%); pointer-events: none;"></div>
+        <div class="p-8 md:p-12 bg-surface border relative overflow-hidden" style="border-color: var(--border-subtle); border-radius: var(--radius-sm); min-height: 420px; display: flex; align-items: center; position: relative;">
+          <div style="position: absolute; top:0; right:0; bottom:0; left:0; background: url('${heroBg}') center/cover no-repeat; opacity: 0.14; pointer-events: none;"></div>
+          <div style="position: absolute; top:0; right:0; bottom:0; left:0; background: radial-gradient(circle at 30% 50%, rgba(5, 6, 8, 0.9) 0%, rgba(5, 6, 8, 0.7) 100%); pointer-events: none;"></div>
           
-          <div class="relative z-10 max-w-narrow">
+          <div class="relative z-10 max-w-narrow" style="position: relative; z-index: 10; opacity: 1;">
             <span class="section-kicker">SELL OR CONSIGN</span>
-            <h1 class="heading-1 font-serif mb-4" style="font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15;">
+            <h1 class="heading-1 font-serif mb-4" style="font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; color: var(--text-primary);">
               A New Chapter for Your Timepiece.
             </h1>
-            <p class="body-muted mb-8 text-base leading-relaxed" style="max-width: 580px;">
+            <p class="body-muted mb-8 text-base leading-relaxed" style="max-width: 580px; color: var(--text-secondary); opacity: 1;">
               Whether you are considering a sale or exploring consignment, begin with a conversation about your watch. We provide transparent, discreet guidance for collectors of Rolex, Omega, Tudor, and Grand Seiko.
             </p>
             <div class="flex items-center gap-4 flex-wrap">
@@ -857,7 +857,7 @@ function formatPreferenceLabel(id) {
 /**
  * BIND INTERACTIVE DOM HANDLERS
  */
-export async function init(ctx) {
+export async function mount(ctx) {
   const isSubmitRoute = ctx.path.includes('/submit');
 
   if (isSubmitRoute) {
@@ -866,6 +866,8 @@ export async function init(ctx) {
     bindLandingHandlers();
   }
 }
+
+export const init = mount;
 
 function bindLandingHandlers() {
   // Smooth scroll for "How It Works" button

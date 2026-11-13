@@ -10,6 +10,7 @@
   margin-right: auto;
   padding-left: var(--container-pad);
   padding-right: var(--container-pad);
+  box-sizing: border-box;
 }
 
 .container-wide {
@@ -19,6 +20,7 @@
   margin-right: auto;
   padding-left: var(--container-pad);
   padding-right: var(--container-pad);
+  box-sizing: border-box;
 }
 
 .container-narrow {
@@ -28,12 +30,14 @@
   margin-right: auto;
   padding-left: var(--container-pad);
   padding-right: var(--container-pad);
+  box-sizing: border-box;
 }
 
 .container-fluid {
   width: 100%;
   padding-left: var(--container-pad);
   padding-right: var(--container-pad);
+  box-sizing: border-box;
 }
 
 /* 12-Column Fluid Grid System */
@@ -41,39 +45,79 @@
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--space-6);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
-.col-span-12 { grid-column: span 12 / span 12; }
-.col-span-8  { grid-column: span 8 / span 12; }
-.col-span-7  { grid-column: span 7 / span 12; }
-.col-span-6  { grid-column: span 6 / span 12; }
-.col-span-5  { grid-column: span 5 / span 12; }
-.col-span-4  { grid-column: span 4 / span 12; }
-.col-span-3  { grid-column: span 3 / span 12; }
+.col-span-12 { grid-column: span 12 / span 12; min-width: 0; max-width: 100%; box-sizing: border-box; }
+.col-span-8  { grid-column: span 8 / span 12; min-width: 0; max-width: 100%; box-sizing: border-box; }
+.col-span-7  { grid-column: span 7 / span 12; min-width: 0; max-width: 100%; box-sizing: border-box; }
+.col-span-6  { grid-column: span 6 / span 12; min-width: 0; max-width: 100%; box-sizing: border-box; }
+.col-span-5  { grid-column: span 5 / span 12; min-width: 0; max-width: 100%; box-sizing: border-box; }
+.col-span-4  { grid-column: span 4 / span 12; min-width: 0; max-width: 100%; box-sizing: border-box; }
+.col-span-3  { grid-column: span 3 / span 12; min-width: 0; max-width: 100%; box-sizing: border-box; }
+
+/* Grid Presets */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-4);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  width: 100%;
+  box-sizing: border-box;
+}
 
 /* Dedicated Grid Presets */
 .watch-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: var(--space-6);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .brand-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: var(--space-6);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: var(--space-6);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.feature-grid > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .journal-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: var(--space-8);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.journal-grid > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Catalog Sidebar + Listing Layout */
@@ -82,6 +126,8 @@
   grid-template-columns: 280px 1fr;
   gap: var(--space-8);
   align-items: start;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* Two-Column Editorial Layout */
@@ -90,6 +136,14 @@
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.two-column-split > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .watch-detail-layout {
@@ -97,4 +151,13 @@
   grid-template-columns: 1.15fr 0.85fr;
   gap: var(--space-12);
   align-items: start;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.watch-detail-layout > * {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
 }

@@ -38,6 +38,41 @@
     grid-template-columns: 1fr;
     gap: var(--space-8);
   }
+
+  .grid-12 {
+    gap: var(--space-6);
+  }
+
+  .grid-12 > [class*="col-span-"] {
+    min-width: 0;
+  }
+}
+
+/* ==========================================================================
+   Medium Tablet & Intermediate Breakpoint (<= 900px)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .grid-12 {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-8);
+  }
+
+  .grid-12 > [class*="col-span-"] {
+    grid-column: span 1 / span 1 !important;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: var(--space-3);
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
 }
 
 /* ==========================================================================

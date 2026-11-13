@@ -84,6 +84,11 @@ export class Router {
     // Update global state
     store.setCurrentRoute({ path, params, query });
 
+    // Toggle homepage class on app root for precise navbar clearance
+    if (this.root) {
+      this.root.classList.toggle('is-homepage', path === '/');
+    }
+
     // Scroll restoration
     scrollToTop();
 

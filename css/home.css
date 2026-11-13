@@ -222,10 +222,18 @@
   margin-top: var(--space-2);
 }
 
-.watch-grid {
+.home-featured-band .watch-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-6);
+  width: 100%;
+}
+
+.home-featured-band .watch-grid .card-watch {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* ==========================================================================
@@ -367,8 +375,17 @@
     grid-template-columns: 1fr;
   }
 
-  .watch-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .home-featured-band .watch-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 900px) {
+    .home-featured-band .watch-grid {
+      grid-template-columns: 1fr;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 
   .standard-schematic-grid {

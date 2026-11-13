@@ -40,10 +40,10 @@
      3. TYPOGRAPHY COLORS (Alabaster Paper, Muted Titanium & Softened Gold)
      ========================================================================= */
   --text-primary: #F4F4F0;         /* Alabaster Paper — Headings & High Emph */
-  --text-secondary: #949AAB;       /* Muted Titanium — Calm, Legible Body */
-  --text-body: #949AAB;            /* Alias for Body Copy */
-  --text-muted: #6E7688;           /* Neutral Metadata & Timestamps */
-  --text-dim: #454C5C;             /* Hairline Annotations & Footnotes */
+  --text-secondary: #B4BAC8;       /* Clean Titanium — Calm, Highly Legible Body */
+  --text-body: #B4BAC8;            /* Alias for Body Copy */
+  --text-muted: #8E96A8;           /* Neutral Metadata & Timestamps */
+  --text-dim: #5A6274;             /* Hairline Annotations & Footnotes */
   --text-inverse: #050608;         /* Text on Bright Accents */
   --text-gold: #D4AF37;            /* Curatorial Gold Callouts */
   --text-gilt: #E5C58E;            /* Warm Gilt Text */

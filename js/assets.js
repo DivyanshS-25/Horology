@@ -4,6 +4,8 @@
  * Direction C — Midnight Navy Horological Fallback Engine
  */
 
+import { generateWatchSvg } from './utils/watchIllustrations.js';
+
 // Embedded lookup map mirroring asset-manifest.json for synchronous, zero-latency ES module resolution
 const MANIFEST_ASSETS = {
   'HZ-HERO-001': {
@@ -111,45 +113,46 @@ export function resolveAsset(idOrPath, options = {}) {
 }
 
 /**
- * Generates an SVG Data-URI placeholder in Direction C Midnight Navy
+ * Generates an SVG Data-URI placeholder in the Obsidian Luxury aesthetic
+ * Uses procedural vector rendering for realistic dial, bezel, and handset
  * @param {string} title 
  * @param {string} subtitle 
  * @returns {string} Data URI
  */
 export function createPlaceholderWatchSvg(title = 'HOROLOGY', subtitle = 'Pre-Owned Mechanical') {
-  const safeTitle = String(title || 'HOROLOGY').replace(/[<>&"]/g, '');
-  const safeSubtitle = String(subtitle || 'Mechanical Chronometer').replace(/[<>&"]/g, '');
+  const brandName = String(title || 'HOROLOGY').split(' ')[0].toUpperCase();
+  const titleLower = String(title || '').toLowerCase();
+  const subtitleLower = String(subtitle || '').toLowerCase();
+  const isChrono = titleLower.includes('speedmaster') || titleLower.includes('daytona') || subtitleLower.includes('chronograph');
 
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
-    <defs>
-      <radialGradient id="bg" cx="50%" cy="50%" r="70%">
-        <stop offset="0%" stop-color="#1B344B"/>
-        <stop offset="60%" stop-color="#101923"/>
-        <stop offset="100%" stop-color="#050608"/>
-      </radialGradient>
-      <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#D4AF37"/>
-        <stop offset="100%" stop-color="#9C7E24"/>
-      </linearGradient>
-    </defs>
-    <rect width="600" height="600" fill="url(#bg)"/>
-    <circle cx="300" cy="300" r="210" fill="none" stroke="#263A50" stroke-width="2"/>
-    <circle cx="300" cy="300" r="190" fill="none" stroke="url(#accent)" stroke-width="1.5" stroke-dasharray="4,8"/>
-    <circle cx="300" cy="300" r="140" fill="none" stroke="#1B344B" stroke-width="1"/>
-    
-    <!-- Balance Wheel Crossbars -->
-    <line x1="300" y1="110" x2="300" y2="490" stroke="#263A50" stroke-width="1" stroke-dasharray="2,4"/>
-    <line x1="110" y1="300" x2="490" y2="300" stroke="#263A50" stroke-width="1" stroke-dasharray="2,4"/>
+  let dialColor = '#080E16';
+  let bezelColor = '#101B28';
+  let accentColor = '#D4AF37';
 
-    <!-- Central Horological Jewel -->
-    <circle cx="300" cy="300" r="8" fill="#D4AF37" opacity="0.85"/>
-    <circle cx="300" cy="300" r="18" fill="none" stroke="#D4AF37" stroke-width="1.5"/>
+  if (brandName.includes('ROLEX')) {
+    dialColor = '#050A0E';
+    bezelColor = '#0D1A14'; // Subtle Cerachrom hue
+    accentColor = '#D4AF37';
+  } else if (brandName.includes('OMEGA')) {
+    dialColor = '#070D14';
+    bezelColor = '#14202E';
+    accentColor = '#D4AF37';
+  } else if (brandName.includes('TUDOR')) {
+    dialColor = '#080B10';
+    bezelColor = '#1A1012';
+    accentColor = '#B76E79';
+  } else if (brandName.includes('GRAND') || brandName.includes('SEIKO')) {
+    dialColor = '#0A121C';
+    bezelColor = '#142232';
+    accentColor = '#80C1F9';
+  }
 
-    <!-- Dial Text -->
-    <text x="300" y="240" font-family="'Cormorant Garamond', Georgia, serif" font-size="24" fill="#F4F4F0" text-anchor="middle" letter-spacing="4">${safeTitle}</text>
-    <text x="300" y="270" font-family="'JetBrains Mono', monospace" font-size="12" fill="#D4AF37" text-anchor="middle" letter-spacing="2">DEMONSTRATION RECORD</text>
-    <text x="300" y="370" font-family="'Inter', sans-serif" font-size="12" fill="#949AAB" text-anchor="middle" letter-spacing="1">${safeSubtitle}</text>
-  </svg>`;
+  const svg = generateWatchSvg(isChrono ? 'chronograph' : 'classic', {
+    dialColor,
+    bezelColor,
+    accentColor,
+    brand: brandName || 'HOROLOGY'
+  });
 
-  return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+  return `data:image/svg+xml;utf8,${encodeURIComponent(svg.trim())}`;
 }
