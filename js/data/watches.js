@@ -30,11 +30,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/rolex/rolex-submariner-126610ln.jpg',
+    imageUrl: 'assets/images/watches/rolex/rolex-submariner-126610ln.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
-      'assets/images/hero/hero-home-primary-16x9.jpg'
+      'assets/images/watches/rolex/rolex-submariner-126610ln.jpg',
+      'assets/images/hero/hero-home-primary-16x9.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: true,
@@ -84,11 +85,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/rolex/rolex-gmt-pepsi-126710blro.jpg',
+    imageUrl: 'assets/images/watches/rolex/rolex-gmt-pepsi-126710blro.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/rolex/rolex-gmt-pepsi-126710blro.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: true,
@@ -138,11 +139,11 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/rolex/rolex-datejust-126334.jpg',
+    imageUrl: 'assets/images/watches/rolex/rolex-datejust-126334.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/rolex/rolex-datejust-126334.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -192,11 +193,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/rolex/rolex-daytona-116500ln.jpg',
+    imageUrl: 'assets/images/watches/rolex/rolex-daytona-116500ln.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1622434641406-a158123450f9?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/rolex/rolex-daytona-116500ln.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: true,
@@ -246,11 +247,11 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/rolex/rolex-explorer-124270.jpg',
+    imageUrl: 'assets/images/watches/rolex/rolex-explorer-124270.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/rolex/rolex-explorer-124270.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -300,11 +301,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspection Pending',
-    image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/rolex/rolex-seadweller-126600.jpg',
+    imageUrl: 'assets/images/watches/rolex/rolex-seadweller-126600.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=1200&q=85',
-      'assets/images/hero/hero-home-primary-16x9.jpg'
+      'assets/images/watches/rolex/rolex-seadweller-126600.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -358,10 +359,10 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/omega/omega-speedmaster-moonwatch.jpg',
+    imageUrl: 'assets/images/watches/omega/omega-speedmaster-moonwatch.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/watches/omega/omega-speedmaster-moonwatch.jpg',
       'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
@@ -412,10 +413,10 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/omega/omega-seamaster-diver-300m.jpg',
+    imageUrl: 'assets/images/watches/omega/omega-seamaster-diver-300m.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/watches/omega/omega-seamaster-diver-300m.jpg',
       'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
@@ -466,10 +467,10 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1619134778706-7015533a6150?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1619134778706-7015533a6150?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/omega/omega-seamaster-aqua-terra.jpg',
+    imageUrl: 'assets/images/watches/omega/omega-seamaster-aqua-terra.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1619134778706-7015533a6150?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/watches/omega/omega-seamaster-aqua-terra.jpg',
       'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
@@ -520,10 +521,10 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/omega/omega-speedmaster-calibre-321.jpg',
+    imageUrl: 'assets/images/watches/omega/omega-speedmaster-calibre-321.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/watches/omega/omega-speedmaster-calibre-321.jpg',
       'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
@@ -574,10 +575,10 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Watch Only',
     inspectionStatus: 'Inspection Pending',
-    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/omega/omega-constellation.jpg',
+    imageUrl: 'assets/images/watches/omega/omega-constellation.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/watches/omega/omega-constellation.jpg',
       'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
@@ -628,10 +629,10 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/omega/omega-seamaster-planet-ocean.jpg',
+    imageUrl: 'assets/images/watches/omega/omega-seamaster-planet-ocean.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/watches/omega/omega-seamaster-planet-ocean.jpg',
       'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
@@ -686,11 +687,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/tudor/tudor-black-bay-58.jpg',
+    imageUrl: 'assets/images/watches/tudor/tudor-black-bay-58.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/tudor/tudor-black-bay-58.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: true,
@@ -740,11 +741,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/tudor/tudor-pelagos-39.jpg',
+    imageUrl: 'assets/images/watches/tudor/tudor-pelagos-39.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/tudor/tudor-pelagos-39.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -794,11 +795,11 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/tudor/tudor-black-bay-gmt.jpg',
+    imageUrl: 'assets/images/watches/tudor/tudor-black-bay-gmt.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/tudor/tudor-black-bay-gmt.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -848,11 +849,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspection Pending',
-    image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/tudor/tudor-black-bay-chrono.jpg',
+    imageUrl: 'assets/images/watches/tudor/tudor-black-bay-chrono.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1622434641406-a158123450f9?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/tudor/tudor-black-bay-chrono.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -902,11 +903,11 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspection Pending',
-    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/tudor/tudor-ranger-39.jpg',
+    imageUrl: 'assets/images/watches/tudor/tudor-ranger-39.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/tudor/tudor-ranger-39.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -956,11 +957,11 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Watch Only',
     inspectionStatus: 'Inspection Pending',
-    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/tudor/tudor-royal-38.jpg',
+    imageUrl: 'assets/images/watches/tudor/tudor-royal-38.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/tudor/tudor-royal-38.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -1014,10 +1015,10 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/grand-seiko/grand-seiko-snowflake-sbga211.jpg',
+    imageUrl: 'assets/images/watches/grand-seiko/grand-seiko-snowflake-sbga211.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/watches/grand-seiko/grand-seiko-snowflake-sbga211.jpg',
       'assets/images/hero/hz_hero_003_v3_1794490992618.jpg',
       'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
@@ -1069,11 +1070,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1518131672697-613becd4fab5?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1518131672697-613becd4fab5?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/grand-seiko/grand-seiko-white-birch-slga009.jpg',
+    imageUrl: 'assets/images/watches/grand-seiko/grand-seiko-white-birch-slga009.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1518131672697-613becd4fab5?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/grand-seiko/grand-seiko-white-birch-slga009.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: true,
@@ -1123,11 +1124,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/grand-seiko/grand-seiko-sport-gmt-sbge257.jpg',
+    imageUrl: 'assets/images/watches/grand-seiko/grand-seiko-sport-gmt-sbge257.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/grand-seiko/grand-seiko-sport-gmt-sbge257.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -1177,11 +1178,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/grand-seiko/grand-seiko-elegance-sbgw231.jpg',
+    imageUrl: 'assets/images/watches/grand-seiko/grand-seiko-elegance-sbgw231.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/grand-seiko/grand-seiko-elegance-sbgw231.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -1231,11 +1232,11 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/grand-seiko/grand-seiko-heritage-9f-sbgp011.jpg',
+    imageUrl: 'assets/images/watches/grand-seiko/grand-seiko-heritage-9f-sbgp011.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/grand-seiko/grand-seiko-heritage-9f-sbgp011.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -1285,11 +1286,11 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Watch Only',
     inspectionStatus: 'Inspection Pending',
-    image: 'https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1200&q=85',
-    imageUrl: 'https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1200&q=85',
+    image: 'assets/images/watches/grand-seiko/grand-seiko-diver-sbga461.jpg',
+    imageUrl: 'assets/images/watches/grand-seiko/grand-seiko-diver-sbga461.jpg',
     gallery: [
-      'https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+      'assets/images/watches/grand-seiko/grand-seiko-diver-sbga461.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
     ],
     imageIsIllustrative: true,
     featured: false,
@@ -1314,6 +1315,7 @@ export const WATCHES = [
     }
   }
 ];
+
 
 
 
