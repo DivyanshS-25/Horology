@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HOROLOGY — Motion, Tactile Interaction & Micro-Mechanics Engine
  * Pure Vanilla JavaScript & CSS (Zero External Libraries)
  * Direction: Obsidian Luxury Edition
@@ -259,7 +259,7 @@ export class MechanicalChronometerWidget {
         <!-- Mechanical Dial & Graduation Track -->
         <div class="chronometer-dial-housing">
           <svg class="chronometer-track-svg" viewBox="0 0 200 200" aria-hidden="true">
-            <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(212,175,55,0.18)" stroke-width="1.5"/>
+            <circle cx="100" cy="100" r="94" fill="none" stroke="rgba(56, 189, 248,0.18)" stroke-width="1.5"/>
             <circle cx="100" cy="100" r="90" fill="none" stroke="rgba(141,184,232,0.12)" stroke-width="1"/>
             ${this.generateDialTicks()}
           </svg>
@@ -315,7 +315,7 @@ export class MechanicalChronometerWidget {
       const y1 = (100 + r1 * Math.sin(rad)).toFixed(2);
       const x2 = (100 + r2 * Math.cos(rad)).toFixed(2);
       const y2 = (100 + r2 * Math.sin(rad)).toFixed(2);
-      const color = isMajor ? '#D4AF37' : 'rgba(241,244,248,0.3)';
+      const color = isMajor ? '#38BDF8' : 'rgba(241,244,248,0.3)';
       const width = isMajor ? 2 : 1;
       ticks += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${color}" stroke-width="${width}" stroke-linecap="round"/>`;
     }
@@ -614,11 +614,11 @@ export class Hero3DExplodedCalibre {
       [230, 180], [140, 220], [200, 220], [170, 145], [170, 80]
     ];
     centers.forEach(([cx, cy]) => {
-      perlage += `<circle cx="${cx}" cy="${cy}" r="22" fill="none" stroke="rgba(212,175,55,0.18)" stroke-width="1.2"/>`;
-      perlage += `<circle cx="${cx}" cy="${cy}" r="15" fill="none" stroke="rgba(212,175,55,0.12)" stroke-width="0.8"/>`;
+      perlage += `<circle cx="${cx}" cy="${cy}" r="22" fill="none" stroke="rgba(56,189,248,0.22)" stroke-width="1.2"/>`;
+      perlage += `<circle cx="${cx}" cy="${cy}" r="15" fill="none" stroke="rgba(226,232,240,0.15)" stroke-width="0.8"/>`;
     });
 
-    // 12 Applied Champagne Gold Indices for Dial
+    // 12 Applied Platinum / White Indices for Dial
     let indices = '';
     for (let i = 0; i < 12; i++) {
       const angle = i * 30;
@@ -631,7 +631,8 @@ export class Hero3DExplodedCalibre {
       const x2 = (170 + rOuter * Math.cos(rad)).toFixed(1);
       const y2 = (170 + rOuter * Math.sin(rad)).toFixed(1);
       const width = isQuarter ? 4 : 2;
-      indices += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="#D4AF37" stroke-width="${width}" stroke-linecap="round"/>`;
+      const indexColor = isQuarter ? '#38BDF8' : '#E2E8F0';
+      indices += `<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" stroke="${indexColor}" stroke-width="${width}" stroke-linecap="round"/>`;
       // Luminous dot pip at outer index
       const pipR = 153;
       const px = (170 + pipR * Math.cos(rad)).toFixed(1);
@@ -659,11 +660,11 @@ export class Hero3DExplodedCalibre {
           <!-- Layer 1 (translateZ(0px)): Engraved Caseback & Mainplate Grid -->
           <div class="calibre-layer calibre-layer-1">
             <svg class="calibre-mainplate-svg" viewBox="0 0 340 340" aria-hidden="true">
-              <circle cx="170" cy="170" r="162" fill="#06090e" stroke="rgba(212,175,55,0.45)" stroke-width="2"/>
+              <circle cx="170" cy="170" r="162" fill="#040609" stroke="rgba(56,189,248,0.4)" stroke-width="2"/>
               ${perlage}
-              <circle cx="170" cy="170" r="38" fill="none" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 2"/>
+              <circle cx="170" cy="170" r="38" fill="none" stroke="#38BDF8" stroke-width="1.5" stroke-dasharray="4 2"/>
               <!-- Calibre Archival Text -->
-              <text x="170" y="248" text-anchor="middle" fill="#D4AF37" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="bold" letter-spacing="2">CALIBRE 3235 &bull; 31 JEWELS</text>
+              <text x="170" y="248" text-anchor="middle" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="8.5" font-weight="bold" letter-spacing="2">CALIBRE 3235 &bull; 31 JEWELS</text>
               <text x="170" y="262" text-anchor="middle" fill="rgba(241,244,248,0.45)" font-family="'JetBrains Mono', monospace" font-size="7" letter-spacing="1.5">ADJUSTED TO 5 POSITIONS</text>
             </svg>
           </div>
@@ -671,29 +672,29 @@ export class Hero3DExplodedCalibre {
           <!-- Layer 2 (translateZ(25px)): Animated Rotating Gear Train & Balance Wheel -->
           <div class="calibre-layer calibre-layer-2">
             <svg class="calibre-gears-cluster" viewBox="0 0 310 310" aria-hidden="true">
-              <!-- Center Wheel Gear (Brass) -->
+              <!-- Center Wheel Gear (Rhodium / Steel) -->
               <g id="gearCenter" style="transform-origin: 155px 155px;">
-                <circle cx="155" cy="155" r="42" fill="none" stroke="#D4AF37" stroke-width="6" stroke-dasharray="7 3"/>
-                <circle cx="155" cy="155" r="36" fill="rgba(212,175,55,0.12)" stroke="rgba(212,175,55,0.5)" stroke-width="1"/>
-                <line x1="155" y1="120" x2="155" y2="190" stroke="#D4AF37" stroke-width="2"/>
-                <line x1="120" y1="155" x2="190" y2="155" stroke="#D4AF37" stroke-width="2"/>
+                <circle cx="155" cy="155" r="42" fill="none" stroke="#E2E8F0" stroke-width="6" stroke-dasharray="7 3"/>
+                <circle cx="155" cy="155" r="36" fill="rgba(56,189,248,0.12)" stroke="rgba(56,189,248,0.5)" stroke-width="1"/>
+                <line x1="155" y1="120" x2="155" y2="190" stroke="#E2E8F0" stroke-width="2"/>
+                <line x1="120" y1="155" x2="190" y2="155" stroke="#E2E8F0" stroke-width="2"/>
               </g>
 
               <!-- Third Wheel (Left Upper) -->
               <g id="gearThird" style="transform-origin: 95px 125px;">
-                <circle cx="95" cy="125" r="28" fill="none" stroke="#caa538" stroke-width="5" stroke-dasharray="5 2.5"/>
-                <circle cx="95" cy="125" r="5" fill="#f43f5e" stroke="#D4AF37" stroke-width="1"/>
+                <circle cx="95" cy="125" r="28" fill="none" stroke="#94A3B8" stroke-width="5" stroke-dasharray="5 2.5"/>
+                <circle cx="95" cy="125" r="5" fill="#f43f5e" stroke="#E2E8F0" stroke-width="1"/>
               </g>
 
               <!-- Fourth Wheel (Seconds Driver) -->
               <g id="gearFourth" style="transform-origin: 195px 115px;">
-                <circle cx="195" cy="115" r="22" fill="none" stroke="#D4AF37" stroke-width="4" stroke-dasharray="4 2"/>
-                <circle cx="195" cy="115" r="4" fill="#f43f5e" stroke="#D4AF37" stroke-width="1"/>
+                <circle cx="195" cy="115" r="22" fill="none" stroke="#38BDF8" stroke-width="4" stroke-dasharray="4 2"/>
+                <circle cx="195" cy="115" r="4" fill="#f43f5e" stroke="#38BDF8" stroke-width="1"/>
               </g>
 
               <!-- Oscillating Variable-Inertia Balance Wheel -->
               <g id="gearBalance" style="transform-origin: 215px 205px;">
-                <circle cx="215" cy="205" r="38" fill="none" stroke="#D4AF37" stroke-width="3"/>
+                <circle cx="215" cy="205" r="38" fill="none" stroke="#38BDF8" stroke-width="3"/>
                 <circle cx="215" cy="205" r="6" fill="#f43f5e" stroke="#FFF" stroke-width="1"/>
                 <!-- Hairspring Coils -->
                 <circle cx="215" cy="205" r="14" fill="none" stroke="rgba(56,242,175,0.4)" stroke-width="1"/>
@@ -713,18 +714,18 @@ export class Hero3DExplodedCalibre {
             <svg class="calibre-dial-svg" viewBox="0 0 340 340" aria-hidden="true">
               <defs>
                 <radialGradient id="dialSunburstHero" cx="50%" cy="38%" r="68%">
-                  <stop offset="0%" stop-color="#142436"/>
-                  <stop offset="65%" stop-color="#08101a"/>
+                  <stop offset="0%" stop-color="#0F2338"/>
+                  <stop offset="65%" stop-color="#070D16"/>
                   <stop offset="100%" stop-color="#020406"/>
                 </radialGradient>
               </defs>
-              <circle cx="170" cy="170" r="158" fill="url(#dialSunburstHero)" stroke="rgba(212,175,55,0.3)" stroke-width="1.5"/>
+              <circle cx="170" cy="170" r="158" fill="url(#dialSunburstHero)" stroke="rgba(56,189,248,0.3)" stroke-width="1.5"/>
               ${indices}
               <!-- Wordmark & Chronometer Rating -->
-              <text x="170" y="104" text-anchor="middle" fill="#D4AF37" font-family="'Cormorant Garamond', serif" font-size="14" font-weight="600" letter-spacing="4">HOROLOGY</text>
-              <text x="170" y="118" text-anchor="middle" fill="rgba(241,244,248,0.5)" font-family="'JetBrains Mono', monospace" font-size="6.5" letter-spacing="1">CHRONOMETER SPECIMEN</text>
+              <text x="170" y="104" text-anchor="middle" fill="#F8FAFC" font-family="'Cormorant Garamond', serif" font-size="14" font-weight="600" letter-spacing="4">HOROLOGY</text>
+              <text x="170" y="118" text-anchor="middle" fill="#38BDF8" font-family="'JetBrains Mono', monospace" font-size="6.5" letter-spacing="1">CHRONOMETER SPECIMEN</text>
               <!-- Date Window at 3 o'clock -->
-              <rect x="238" y="160" width="22" height="20" rx="2" fill="#040608" stroke="rgba(212,175,55,0.5)" stroke-width="1"/>
+              <rect x="238" y="160" width="22" height="20" rx="2" fill="#040608" stroke="rgba(56,189,248,0.5)" stroke-width="1"/>
               <text x="249" y="175" text-anchor="middle" fill="#f1f4f8" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="bold">28</text>
             </svg>
 
@@ -1215,12 +1216,12 @@ export class CrownWindingWidget {
               <defs>
                 <linearGradient id="powerGaugeGrad" x1="0%" y1="100%" x2="100%" y2="0%">
                   <stop offset="0%" stop-color="#f43f5e"/>
-                  <stop offset="40%" stop-color="#D4AF37"/>
+                  <stop offset="40%" stop-color="#38BDF8"/>
                   <stop offset="100%" stop-color="#38f2af"/>
                 </linearGradient>
               </defs>
               <!-- Center Hub & Needle -->
-              <circle cx="60" cy="70" r="5" fill="#D4AF37"/>
+              <circle cx="60" cy="70" r="5" fill="#38BDF8"/>
               <line id="powerNeedle" class="power-reserve-needle" x1="60" y1="70" x2="60" y2="28" stroke="#f1f4f8" stroke-width="2.5" stroke-linecap="round"/>
             </svg>
 
@@ -1366,20 +1367,36 @@ export class CrownWindingWidget {
       this.onAmplitudeChanged(calculatedAmplitude, this.currentHours);
     }
   }
+
+  destroy() {
+    this.isDragging = false;
+  }
 }
 
 // =========================================================================
-// 10. 3D BUTTONS & SPECULAR CURSOR HIGHLIGHT INITIALIZER
+// 10. 3D BUTTONS & SPECULAR CURSOR HIGHLIGHT & MAGNETIC ATTRACTION
 // =========================================================================
 export function init3DButtonsAndTooltips() {
   document.addEventListener('pointermove', (e) => {
-    const btn = e.target.closest('.btn-primary, .btn-gold, .btn-3d-specular');
+    const btn = e.target.closest('.btn-primary, .btn-cyan, .btn-platinum, .btn-gold, .btn-3d-specular');
     if (!btn) return;
     const rect = btn.getBoundingClientRect();
     const xPct = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
     const yPct = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
     btn.style.setProperty('--btn-x', `${xPct.toFixed(1)}%`);
     btn.style.setProperty('--btn-y', `${yPct.toFixed(1)}%`);
+
+    // Fluid magnetic spring attraction (clamped to subtle ±4px)
+    const relX = Math.max(-4, Math.min(4, (e.clientX - (rect.left + rect.width / 2)) * 0.12));
+    const relY = Math.max(-4, Math.min(4, (e.clientY - (rect.top + rect.height / 2)) * 0.12));
+    btn.style.transform = `translate(${relX.toFixed(1)}px, ${relY.toFixed(1)}px)`;
+  }, { passive: true });
+
+  document.addEventListener('pointerout', (e) => {
+    const btn = e.target.closest('.btn-primary, .btn-cyan, .btn-platinum, .btn-gold, .btn-3d-specular');
+    if (btn) {
+      btn.style.transform = '';
+    }
   }, { passive: true });
 }
 

@@ -123,7 +123,7 @@ class App {
       this.router.init();
 
       console.info('%c HOROLOGY %c Beyond Time. Beyond Ordinary. %c', 
-        'background: #050608; color: #D4AF37; font-weight: bold; padding: 4px 8px; border-left: 2px solid #D4AF37;',
+        'background: #030508; color: #38BDF8; font-weight: bold; padding: 4px 8px; border-left: 2px solid #38BDF8;',
         'background: #101923; color: #F4F4F0; padding: 4px 8px;',
         'background: transparent;'
       );

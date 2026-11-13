@@ -309,10 +309,10 @@ const WATCH_INTELLIGENCE = {
 
   'demo-tudor-m79030n-0001': {
     headline: 'The Vintage-Proportioned Tool Watch: Black Bay Fifty-Eight',
-    description: 'The Tudor Black Bay 58 reference M79030N-0001 pays homage to the brand\'s first 200-meter diver, the 1958 "Big Crown" reference 7924. Built with vintage proportions (39mm diameter and 11.9mm thickness), a matte black dial with warm gilt printing, pink-gold plated Snowflake hands, and an unshielded screw-down winding crown. Driven by the Kenissi-manufactured COSC-certified Calibre MT5402.',
+    description: 'The Tudor Black Bay 58 reference M79030N-0001 pays homage to the brand\'s first 200-meter diver, the 1958 "Big Crown" reference 7924. Built with vintage proportions (39mm diameter and 11.9mm thickness), a matte black dial with crisp silver printing, rhodium-plated Snowflake hands, and an unshielded screw-down winding crown. Driven by the Kenissi-manufactured COSC-certified Calibre MT5402.',
     designCharacteristics: [
       'Compact 39mm stainless steel case with polished bevels and satin-brushed surfaces',
-      'Matte black domed dial with warm gilt printing and pink-gold hour markers',
+      'Matte black domed dial with crisp silver printing and rhodium-finished hour markers',
       'Unidirectional rotating steel bezel with matte black anodised aluminium insert and red triangle at 12 o\'clock',
       'Signature "Snowflake" hands introduced by Tudor in the French Marine Nationale era (1969)',
       'Riveted-style stainless steel bracelet echoing 1950s and 60s historic tool watches'
@@ -329,9 +329,9 @@ const WATCH_INTELLIGENCE = {
     crown: 'Screw-down steel winding crown with the Tudor rose in relief',
     bezel: 'Unidirectional rotatable 60-minute bezel with matte black aluminium disc and gilded markings',
     dialFinish: 'Matte black domed dial with subtle granular texture',
-    indices: 'Applied pink-gold plated indices with Grade A Swiss Super-LumiNova',
+    indices: 'Applied rhodium-plated indices with Grade A Swiss Super-LumiNova',
     lume: 'Super-LumiNova (green luminescence)',
-    hands: 'Pink-gold plated Tudor Snowflake hands with central sweep seconds',
+    hands: 'Rhodium-plated Tudor Snowflake hands with central sweep seconds',
     datePlacement: 'None (symmetrical no-date dial layout)',
     calibre: 'Calibre MT5402',
     architecture: 'In-house automatic movement with bidirectional rotor system and traversing balance bridge',
@@ -356,7 +356,7 @@ const WATCH_INTELLIGENCE = {
       bezel: '9.8/10 — Aluminium insert and red triangle in immaculate condition.',
       crystal: '10/10 — Flawless domed sapphire crystal.',
       dial: '10/10 — Pristine gilt printing and warm cream luminescence plots.',
-      hands: '10/10 — Untarnished pink-gold plated handset.',
+      hands: '10/10 — Untarnished rhodium-plated handset.',
       braceletStrap: '9.4/10 — Solid rivet bracelet with light surface marks on clasp.',
       clasp: '9.5/10 — Firm closure with ceramic ball bearings clicking securely.',
       movement: '9.8/10 — Internally clean, winds smoothly.'

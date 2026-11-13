@@ -92,7 +92,7 @@ export class NavigationController {
             <a href="#/movement-lab" class="nav-link" data-route="/movement-lab">Movement Lab</a>
             <a href="#/journal" class="nav-link" data-route="/journal">Journal</a>
 
-            <!-- Sliding Golden Active Indicator Bar -->
+            <!-- Sliding Precision Active Indicator Bar -->
             <div class="nav-active-glide-bar" id="navActiveGlideBar" aria-hidden="true"></div>
           </nav>
 
@@ -192,7 +192,7 @@ export class NavigationController {
               <p class="body-muted mb-4" style="font-size: var(--text-sm); line-height: 1.6; max-width: 360px;">
                 An independent sanctuary for certified pre-owned mechanical chronometers. Each timepiece is subjected to forensic examination and verified with transparent electronic telemetry.
               </p>
-              <div class="flex items-center gap-3 text-gold font-mono" style="font-size: var(--text-xs);">
+              <div class="flex items-center gap-3 text-accent font-mono" style="font-size: var(--text-xs);">
                 <span>ROLEX</span> &bull; <span>OMEGA</span> &bull; <span>TUDOR</span> &bull; <span>GRAND SEIKO</span>
               </div>
             </div>

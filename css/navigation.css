@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HOROLOGY — Navigation & Header/Footer Stylesheet
  * Direction: OBSIDIAN LUXURY EDITION (Phase 08)
  * Polished Metal Chrome, Translucent Obsidian Sheen, Acoustic Tactility
@@ -47,17 +47,17 @@
   position: relative;
 }
 
-/* Sliding Golden Active Indicator Bar */
+/* Sliding Precision Active Indicator Bar */
 .nav-active-glide-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, #D4AF37, #F3E5AB, #D4AF37);
-  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  background: linear-gradient(90deg, #38BDF8, #F8FAFC, #38BDF8);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.85);
   border-radius: 2px;
   pointer-events: none;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), width 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), width 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
   opacity: 0;
   z-index: 2;
   will-change: transform, width, opacity;
@@ -167,7 +167,7 @@
 .nav-action-btn.audio-active {
   color: var(--accent-primary);
   border-color: var(--border-hairline);
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(56, 189, 248, 0.08);
 }
 
 .nav-action-btn.lume-active {
@@ -195,7 +195,7 @@
   justify-content: center;
   line-height: 1;
   transition: transform var(--transition-fast);
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
 
 .counter-badge:empty,
@@ -266,7 +266,7 @@
 .search-input:focus {
   border-color: var(--accent-primary);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.25);
 }
 
 .search-close-btn {

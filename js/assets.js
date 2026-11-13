@@ -127,24 +127,24 @@ export function createPlaceholderWatchSvg(title = 'HOROLOGY', subtitle = 'Pre-Ow
 
   let dialColor = '#080E16';
   let bezelColor = '#101B28';
-  let accentColor = '#D4AF37';
+  let accentColor = '#38BDF8';
 
   if (brandName.includes('ROLEX')) {
     dialColor = '#050A0E';
     bezelColor = '#0D1A14'; // Subtle Cerachrom hue
-    accentColor = '#D4AF37';
+    accentColor = '#38BDF8';
   } else if (brandName.includes('OMEGA')) {
     dialColor = '#070D14';
     bezelColor = '#14202E';
-    accentColor = '#D4AF37';
+    accentColor = '#38BDF8';
   } else if (brandName.includes('TUDOR')) {
     dialColor = '#080B10';
-    bezelColor = '#1A1012';
-    accentColor = '#B76E79';
+    bezelColor = '#121822';
+    accentColor = '#E2E8F0';
   } else if (brandName.includes('GRAND') || brandName.includes('SEIKO')) {
     dialColor = '#0A121C';
     bezelColor = '#142232';
-    accentColor = '#80C1F9';
+    accentColor = '#38BDF8';
   }
 
   const svg = generateWatchSvg(isChrono ? 'chronograph' : 'classic', {

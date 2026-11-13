@@ -527,7 +527,7 @@ function renderStep2(session) {
 
       <div class="form-group mb-6">
         <label class="form-label">Case Metallurgy &amp; Material (Optional)</label>
-        <input type="text" class="form-input" id="fieldMaterial" value="${escapeHTML(session.caseMaterial || '')}" placeholder="e.g. Oystersteel, Titanium, Sedna Gold">
+        <input type="text" class="form-input" id="fieldMaterial" value="${escapeHTML(session.caseMaterial || '')}" placeholder="e.g. Oystersteel, Titanium, Platinum">
       </div>
 
       <div class="wizard-nav-toolbar">

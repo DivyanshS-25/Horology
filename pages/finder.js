@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HOROLOGY — Page Module: Intelligent Watch Finder
  * Route: #/watch-finder (Canonical) & #/finder (Alias)
  * Direction C — Midnight Navy Edition
@@ -438,7 +438,7 @@ function renderFinderWatchCard(item, tier) {
 
   let badgeStyle = 'background: rgba(52, 211, 153, 0.15); color: #34D399; border: 1px solid rgba(52, 211, 153, 0.3);';
   if (tier === 'strong') {
-    badgeStyle = 'background: var(--accent-subtle); color: var(--accent-primary); border: 1px solid rgba(212, 175, 55, 0.3);';
+    badgeStyle = 'background: var(--accent-subtle); color: var(--accent-primary); border: 1px solid rgba(56, 189, 248, 0.3);';
   } else if (tier === 'alternative') {
     badgeStyle = 'background: rgba(166, 178, 194, 0.15); color: var(--text-secondary); border: 1px solid var(--border-subtle);';
   }

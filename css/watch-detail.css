@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HOROLOGY — Scoped Stylesheet: Watch Detail & Inspection Dossier (Phase 04)
  * Direction C — Midnight Navy Edition
  */
@@ -75,7 +75,7 @@
   height: 150px;
   border-radius: 50%;
   border: 2px solid var(--accent);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(56, 189, 248, 0.25);
   pointer-events: none;
   display: none;
   z-index: 25;
@@ -219,7 +219,7 @@
 
 .gallery-thumb.active {
   border-color: var(--accent);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
 }
 
 .gallery-thumb-placeholder {
@@ -521,7 +521,7 @@
 .movement-telemetry-notice {
   margin-top: var(--space-6);
   padding: var(--space-4);
-  background: rgba(212, 175, 55, 0.06);
+  background: rgba(56, 189, 248, 0.06);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-xs);
   font-size: var(--text-xs);
@@ -629,14 +629,14 @@
 }
 
 .gallery-jump-btn:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: rgba(212, 175, 55, 0.08);
+  color: var(--accent-primary);
+  border-color: var(--accent-primary);
+  background: rgba(56, 189, 248, 0.12);
 }
 
 .condition-disclaimer-banner {
   background: var(--surface-secondary);
-  border-left: 3px solid var(--gold);
+  border-left: 3px solid var(--accent-primary);
   padding: var(--space-4) var(--space-6);
   border-radius: 0 var(--radius-xs) var(--radius-xs) 0;
   font-size: var(--text-xs);
@@ -698,7 +698,7 @@
   right: 0;
   width: 320px;
   height: 100%;
-  background: radial-gradient(circle at right, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle at right, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -816,8 +816,8 @@
 }
 
 .inquiry-honesty-banner {
-  background: rgba(212, 175, 55, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.25);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
   border-radius: var(--radius-xs);
   padding: var(--space-3) var(--space-4);
   margin-bottom: var(--space-6);
@@ -928,7 +928,7 @@
   font-size: var(--text-sm);
   color: var(--accent);
   padding: 8px 12px;
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(56, 189, 248, 0.08);
   border-radius: var(--radius-xs);
   display: inline-block;
   margin: var(--space-2) 0;

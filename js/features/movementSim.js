@@ -1,4 +1,4 @@
-// HOROLOGY — Movement Lab Interactive Simulation Engine
+﻿// HOROLOGY — Movement Lab Interactive Simulation Engine
 
 export const MOVEMENT_PARTS = [
   {
@@ -112,7 +112,7 @@ export class MovementSimulator {
     ctx.moveTo(cx - balanceRadius * 1.1, cy - balanceRadius * 0.4);
     ctx.lineTo(cx, cy);
     ctx.lineTo(cx + balanceRadius * 1.1, cy - balanceRadius * 0.4);
-    ctx.strokeStyle = 'rgba(212, 175, 55, 0.3)';
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.3)';
     ctx.lineWidth = 14;
     ctx.stroke();
     ctx.restore();
@@ -125,7 +125,7 @@ export class MovementSimulator {
     // Rim
     ctx.beginPath();
     ctx.arc(0, 0, balanceRadius, 0, 2 * Math.PI);
-    ctx.strokeStyle = '#D4AF37';
+    ctx.strokeStyle = '#38BDF8';
     ctx.lineWidth = 6;
     ctx.stroke();
 

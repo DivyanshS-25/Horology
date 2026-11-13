@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HOROLOGY — Component Library Stylesheet
  * Direction: OBSIDIAN LUXURY EDITION (Phase 08)
  * Curated Vault Cards, Timing Telemetry Drawers, Interactive Hotspots, Metallic Hierarchy
@@ -28,60 +28,68 @@
   cursor: pointer;
 }
 
-.btn-primary {
-  background-color: var(--accent-primary);
-  color: #050608;
-  border-color: #b89327;
+.btn-primary,
+.btn-cyan {
+  background: var(--gradient-cyan-button);
+  color: #030508;
+  border-color: rgba(56, 189, 248, 0.6);
   font-weight: 600;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 0 #8c6f14, 0 6px 18px rgba(0, 0, 0, 0.5);
-  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), background-color 0.2s ease;
+  box-shadow: 0 4px 0 #0369a1, 0 6px 20px rgba(56, 189, 248, 0.35);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease;
   will-change: transform, box-shadow;
 }
 
-.btn-primary:hover {
-  background-color: var(--accent-hover);
-  border-color: #cda835;
+.btn-primary:hover,
+.btn-cyan:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 50%, #67e8f9 100%);
+  border-color: #67e8f9;
   transform: translateY(-2px);
-  box-shadow: 0 6px 0 #8c6f14, 0 10px 24px rgba(212, 175, 55, 0.35);
+  box-shadow: 0 6px 0 #0369a1, 0 12px 28px rgba(56, 189, 248, 0.5);
 }
 
-.btn-primary:active {
+.btn-primary:active,
+.btn-cyan:active {
   transform: translateY(3px);
-  box-shadow: 0 1px 0 #8c6f14, 0 3px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 0 #0369a1, 0 3px 8px rgba(0, 0, 0, 0.5);
 }
 
-.btn-gold {
-  background: var(--gradient-gold-button);
-  color: #050608;
-  border-color: #caa538;
+.btn-gold,
+.btn-platinum {
+  background: var(--gradient-platinum-button);
+  color: #030508;
+  border-color: #cbd5e1;
   font-weight: 600;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 0 #8c6f14, 0 8px 22px rgba(212, 175, 55, 0.35);
-  transition: transform 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.12s cubic-bezier(0.2, 0.8, 0.4, 1), filter 0.2s ease;
+  box-shadow: 0 4px 0 #94a3b8, 0 8px 22px rgba(226, 232, 240, 0.25);
+  transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s cubic-bezier(0.16, 1, 0.3, 1), filter 0.2s ease;
   will-change: transform, box-shadow;
 }
 
-.btn-gold:hover {
+.btn-gold:hover,
+.btn-platinum:hover {
   filter: brightness(1.08);
   transform: translateY(-2px);
-  box-shadow: 0 6px 0 #8c6f14, 0 14px 30px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 6px 0 #94a3b8, 0 14px 30px rgba(226, 232, 240, 0.45);
 }
 
-.btn-gold:active {
+.btn-gold:active,
+.btn-platinum:active {
   transform: translateY(3px);
-  box-shadow: 0 1px 0 #8c6f14, 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 1px 0 #94a3b8, 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
 /* 3D Specular Highlight Sheen on Buttons (Tracks Cursor) */
 .btn-primary::after,
-.btn-gold::after {
+.btn-cyan::after,
+.btn-gold::after,
+.btn-platinum::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle 90px at var(--btn-x, 50%) var(--btn-y, 50%), rgba(255, 255, 255, 0.32) 0%, transparent 80%);
+  background: radial-gradient(circle 90px at var(--btn-x, 50%) var(--btn-y, 50%), rgba(255, 255, 255, 0.38) 0%, transparent 80%);
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.25s ease;
@@ -89,7 +97,9 @@
 }
 
 .btn-primary:hover::after,
-.btn-gold:hover::after {
+.btn-cyan:hover::after,
+.btn-gold:hover::after,
+.btn-platinum:hover::after {
   opacity: 1;
 }
 
@@ -100,9 +110,9 @@
   background: rgba(6, 11, 16, 0.88);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   border-radius: var(--radius-xs);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 12px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7), 0 0 12px rgba(56, 189, 248, 0.15);
   color: var(--text-primary);
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -141,7 +151,7 @@
   background-color: var(--accent-subtle);
   border-color: var(--accent-primary);
   color: var(--text-primary);
-  box-shadow: 0 0 16px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.2);
 }
 
 .btn-ghost {
@@ -231,7 +241,7 @@
 
 .card-watch:hover .card-face-front {
   transform: translateY(-4px);
-  border-color: rgba(212, 175, 55, 0.35);
+  border-color: rgba(56, 189, 248, 0.35);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -252,15 +262,15 @@
   justify-content: space-between;
   padding: var(--space-5);
   background: radial-gradient(circle at 50% 25%, #101925 0%, #06090f 100%);
-  border: 1px solid rgba(212, 175, 55, 0.35);
+  border: 1px solid rgba(56, 189, 248, 0.35);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 40px rgba(0, 0, 0, 0.8);
   z-index: 1;
 }
 
 .card-watch.is-flipped .card-face-back {
   z-index: 3;
-  border-color: rgba(212, 175, 55, 0.65);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(212, 175, 55, 0.25);
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.85), 0 0 24px rgba(56, 189, 248, 0.25);
 }
 
 /* Exhibition Caseback Components */
@@ -279,7 +289,7 @@
   margin: 0 auto;
   border-radius: 50%;
   background: radial-gradient(circle at 50% 40%, #152233 0%, #080d14 75%);
-  border: 4px dashed rgba(212, 175, 55, 0.4);
+  border: 4px dashed rgba(56, 189, 248, 0.4);
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.9), 0 0 0 2px #050608, 0 6px 18px rgba(0, 0, 0, 0.6);
   display: flex;
   flex-direction: column;
@@ -293,8 +303,8 @@
   position: absolute;
   inset: 6px;
   border-radius: 50%;
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  background: repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 8px, rgba(212, 175, 55, 0.05) 9px, transparent 10px);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  background: repeating-radial-gradient(circle at 50% 50%, transparent 0, transparent 8px, rgba(56, 189, 248, 0.05) 9px, transparent 10px);
 }
 
 .caseback-rotor-ring {
@@ -304,7 +314,7 @@
   right: 10px;
   bottom: 10px;
   border-radius: 50%;
-  border-top: 3px solid #D4AF37;
+  border-top: 3px solid var(--accent-primary);
   border-right: 3px solid transparent;
   border-bottom: 3px solid transparent;
   border-left: 3px solid transparent;
@@ -323,7 +333,7 @@
   height: 9px;
   border-radius: 50%;
   background: radial-gradient(circle at 30% 30%, #f43f5e 0%, #881337 100%);
-  border: 1px solid #D4AF37;
+  border: 1px solid rgba(226, 232, 240, 0.4);
   box-shadow: 0 0 6px rgba(244, 63, 94, 0.6);
 }
 
@@ -395,7 +405,7 @@
 
 .caseback-power-fill {
   height: 100%;
-  background: linear-gradient(90deg, #D4AF37, #38f2af);
+  background: linear-gradient(90deg, #0284c7, #38bdf8, #38f2af);
   border-radius: 2px;
 }
 
@@ -472,7 +482,7 @@
   color: var(--accent-primary);
   border-color: var(--accent-primary);
   background-color: rgba(5, 6, 8, 0.95);
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.2);
 }
 
 .action-badge-btn.active {
@@ -534,7 +544,7 @@
   background: rgba(5, 6, 8, 0.95);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(56, 189, 248, 0.3);
   padding: var(--space-4);
   display: flex;
   flex-direction: column;
@@ -586,7 +596,7 @@
 }
 
 .telemetry-chip.unavail {
-  background: rgba(212, 175, 55, 0.08);
+  background: rgba(56, 189, 248, 0.08);
   color: var(--accent-primary);
   border: 1px solid var(--border-hairline);
 }
@@ -763,7 +773,7 @@
 
 .card-brand:hover {
   transform: translateY(-3px);
-  border-color: rgba(212, 175, 55, 0.35);
+  border-color: rgba(56, 189, 248, 0.35);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -819,7 +829,7 @@
 
 .card-editorial:hover {
   transform: translateY(-3px);
-  border-color: rgba(212, 175, 55, 0.35);
+  border-color: rgba(56, 189, 248, 0.35);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -892,7 +902,7 @@
   width: 26px;
   height: 26px;
   border-radius: 50%;
-  background: rgba(212, 175, 55, 0.25);
+  background: rgba(56, 189, 248, 0.25);
   border: 1px solid var(--accent-primary);
   display: flex;
   align-items: center;
@@ -906,7 +916,7 @@
 .hotspot-beacon:hover,
 .hotspot-beacon:focus {
   transform: scale(1.18);
-  background: rgba(212, 175, 55, 0.45);
+  background: rgba(56, 189, 248, 0.45);
 }
 
 .hotspot-beacon-dot {
@@ -914,7 +924,7 @@
   height: 8px;
   border-radius: 50%;
   background-color: var(--accent-primary);
-  box-shadow: 0 0 6px rgba(212, 175, 55, 0.8);
+  box-shadow: 0 0 6px rgba(56, 189, 248, 0.8);
 }
 
 .hotspot-popover {
@@ -927,7 +937,7 @@
   border: 1px solid var(--border-accent);
   border-radius: var(--radius-xs);
   padding: var(--space-4);
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9), 0 0 16px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.9), 0 0 16px rgba(56, 189, 248, 0.15);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -994,7 +1004,7 @@
 .badge-reserved {
   background-color: var(--status-reserved-bg);
   color: var(--status-reserved);
-  border-color: rgba(212, 175, 55, 0.3);
+  border-color: rgba(56, 189, 248, 0.3);
 }
 
 .badge-archived {
@@ -1010,7 +1020,7 @@
 }
 
 .badge-subtle {
-  background-color: rgba(212, 175, 55, 0.08);
+  background-color: rgba(56, 189, 248, 0.08);
   color: var(--accent-primary);
   border-color: var(--border-hairline);
 }
@@ -1129,7 +1139,7 @@
 .form-textarea:focus {
   border-color: var(--accent-primary);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
 }
 
 .form-input::placeholder,

@@ -37,7 +37,7 @@ export const ICONS = {
 export function createButton({
   label = 'Button',
   href = null,
-  variant = 'primary', // primary | secondary | outline | ghost | gold
+  variant = 'primary', // primary | secondary | outline | ghost | cyan | platinum
   size = 'md',        // sm | md | lg
   icon = null,
   iconPosition = 'right',
@@ -364,7 +364,7 @@ export function createBrandCard(brand) {
       <h3 class="card-brand-title">${escapeHTML(brand.name)}</h3>
       <span class="card-brand-meta">${escapeHTML(brand.origin)} &bull; Est. ${brand.founded}</span>
       <p class="card-brand-desc">${escapeHTML(brand.description)}</p>
-      <div class="flex items-center gap-2 text-gold mt-auto" style="font-size: var(--text-xs); font-family: var(--font-mono); text-transform: uppercase;">
+      <div class="flex items-center gap-2 text-accent mt-auto" style="font-size: var(--text-xs); font-family: var(--font-mono); text-transform: uppercase;">
         <span>Explore Collection</span>
         ${ICONS.arrowRight}
       </div>

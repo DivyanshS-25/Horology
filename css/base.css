@@ -1,4 +1,4 @@
-/* HOROLOGY — CSS Base Layer */
+﻿/* HOROLOGY — CSS Base Layer */
 @layer base {
   body {
     background-color: var(--color-bg-base);
@@ -9,7 +9,7 @@
     overflow-x: hidden;
     position: relative;
     background-image: 
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.05), transparent 70%),
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.05), transparent 70%),
       radial-gradient(circle 600px at 100% 40%, rgba(27, 52, 75, 0.25), transparent),
       radial-gradient(circle 500px at 0% 80%, rgba(16, 25, 35, 0.4), transparent);
     background-attachment: fixed;

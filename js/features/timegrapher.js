@@ -103,14 +103,14 @@ export class TimegrapherScreen {
       ctx.arc(pt.x, pt.y1, 1.4, 0, 2 * Math.PI);
       ctx.fill();
 
-      ctx.fillStyle = '#D4AF37'; // Champagne gold
+      ctx.fillStyle = '#38BDF8'; // Electric ice cyan
       ctx.beginPath();
       ctx.arc(pt.x, pt.y2, 1.4, 0, 2 * Math.PI);
       ctx.fill();
     }
 
     // Grid center line
-    ctx.strokeStyle = 'rgba(212, 175, 55, 0.2)';
+    ctx.strokeStyle = 'rgba(56, 189, 248, 0.25)';
     ctx.setLineDash([4, 4]);
     ctx.beginPath();
     ctx.moveTo(0, height / 2);

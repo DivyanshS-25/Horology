@@ -72,7 +72,7 @@ export const ARTICLES = [
       <p class="mb-4">For enthusiasts of the Omega Speedmaster Professional Calibre 1861 or the Grand Seiko Calibre 9R31, winding the crown each morning is not a chore — it is an intimate sensory connection to the gear train. Without an oscillating rotor obstructing the caseback, manual movements offer an uninhibited view of bridges, column wheels, and balance cocks.</p>
 
       <h3 class="mb-3 mt-6">The Engineering of the Automatic Rotor</h3>
-      <p class="mb-4">Automatic watches utilize an eccentric weighted rotor that pivots with the natural kinetic motion of the wearer's wrist. Modern bidirectional reversing wheels and heavy tungsten or 21K gold oscillating weights ensure that mainspring tension remains at its optimal high torque, maintaining consistent amplitude throughout the day.</p>
+      <p class="mb-4">Automatic watches utilize an eccentric weighted rotor that pivots with the natural kinetic motion of the wearer's wrist. Modern bidirectional reversing wheels and heavy tungsten or platinum oscillating weights ensure that mainspring tension remains at its optimal high torque, maintaining consistent amplitude throughout the day.</p>
     `,
     relatedWatchIds: ['omega-speedmaster-pro-311-30-42-30-01-001', 'grand-seiko-elegance-sbgy007-omiwatari']
   }

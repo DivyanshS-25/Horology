@@ -1,83 +1,99 @@
 /**
  * HOROLOGY — Design Tokens
- * Direction: OBSIDIAN LUXURY EDITION (Phase 08)
- * Architectural Color, Typography, Spacing, Shadows & Motion Systems
- * Strict Luxury Horological Specification
+ * Direction: OBSIDIAN TITANIUM & ICE CYAN EDITION (Strict Luxury Horology)
+ * Ultra-Smooth Tactile Precision & Spatial Architecture
+ * STRICTLY NO GOLD
  */
 
 :root {
   /* =========================================================================
-     1. SURFACES & FOUNDATION (Obsidian, Petrol & Deep Metallic Canvas)
+     1. SURFACES & FOUNDATION (Pitch Obsidian, Deep Basalt & Titanium Slate)
      ========================================================================= */
-  --bg-primary: #050608;          /* Pure Obsidian Canvas */
-  --bg-secondary: #0B131D;        /* Deep Petrol Slate */
-  --bg-surface: #101923;          /* Elevated Luxury Surface */
-  --bg-card: #121C27;             /* Card / Specimen Stage */
-  --bg-inset: #080D13;            /* Inset Recessed Surface */
-  --bg-surface-hover: #162330;    /* Interactive Surface Lift */
-  --bg-surface-active: #1C2B3B;   /* Interactive Depressed State */
-  --bg-overlay: rgba(5, 6, 8, 0.88);
-  --bg-overlay-heavy: rgba(5, 6, 8, 0.96);
-  --bg-glass: rgba(11, 19, 29, 0.92);
-  --bg-glass-subtle: rgba(16, 25, 35, 0.75);
+  --bg-primary: #030508;          /* Pure Pitch Obsidian Canvas */
+  --bg-secondary: #070B12;        /* Deep Basalt Slate */
+  --bg-surface: #0C121D;          /* Elevated Titanium Surface */
+  --bg-card: #0F1724;             /* Specimen Stage / Card Base */
+  --bg-inset: #05080E;            /* Inset Recessed Surface */
+  --bg-surface-hover: #141F30;    /* Interactive Surface Lift */
+  --bg-surface-active: #19283D;   /* Interactive Depressed State */
+  --bg-overlay: rgba(3, 5, 8, 0.88);
+  --bg-overlay-heavy: rgba(3, 5, 8, 0.96);
+  --bg-glass: rgba(11, 18, 29, 0.88);
+  --bg-glass-subtle: rgba(15, 23, 36, 0.70);
 
   /* =========================================================================
-     2. METALLIC ACCENTS (Champagne Gold, Rose Gold & Gilt Horology)
+     2. TECHNICAL METALLIC ACCENTS (Brushed Platinum, Titanium, Ice Cyan & Lume)
+     STRICTLY NO GOLD
      ========================================================================= */
-  --accent-primary: #D4AF37;       /* Primary Accent — Champagne Gold */
-  --accent-gold: #D4AF37;          /* Canonical Champagne Gold */
-  --accent-secondary: #B76E79;     /* Secondary Accent — Rose Gold */
-  --accent-rosegold: #B76E79;      /* Canonical Rose Gold */
-  --accent-gilt: #E5C58E;          /* Tertiary Metallic — Gilt Graining */
-  --accent-subtle: rgba(212, 175, 55, 0.12); /* Subtle Gold Wash */
-  --accent-hover: #DFBE4A;         /* Luminous Gold Hover */
-  --accent-active: #B8972E;        /* Pressed Gold */
-  --accent-glow: rgba(212, 175, 55, 0.22);
-  --accent-petrol: #1B344B;        /* Deep Petrol Blue Accent */
-  --accent-petrol-glow: rgba(27, 52, 75, 0.35);
+  --accent-primary: #38BDF8;       /* Electric Ice Cyan — Primary Technical Accent */
+  --accent-cyan: #38BDF8;          /* Canonical Ice Cyan */
+  --accent-secondary: #E2E8F0;     /* Brushed Platinum / Titanium */
+  --accent-platinum: #E2E8F0;      /* Canonical Brushed Platinum */
+  --accent-lume: #38F2AF;          /* Super-LumiNova Precision Cyan-Green */
+  --accent-steel: #94A3B8;         /* Polished Surgical Steel */
+  --accent-subtle: rgba(56, 189, 248, 0.12); /* Subtle Ice Cyan Wash */
+  --accent-hover: #67E8F9;         /* Luminous Aqua Cyan Hover */
+  --accent-active: #0284C7;        /* Deep Cobalt Blue Pressed */
+  --accent-glow: rgba(56, 189, 248, 0.28);
+  --accent-petrol: #0B1E32;        /* Deep Petrol Basalt */
+  --accent-petrol-glow: rgba(56, 189, 248, 0.15);
+
+  /* Clean Forwarding Aliases (Never Render Gold) */
+  --accent-gold: #38BDF8;          /* Remapped to Ice Cyan */
+  --accent-rosegold: #E2E8F0;      /* Remapped to Brushed Platinum */
+  --accent-gilt: #94A3B8;          /* Remapped to Polished Steel */
 
   /* =========================================================================
-     3. TYPOGRAPHY COLORS (Alabaster Paper, Muted Titanium & Softened Gold)
+     3. TYPOGRAPHY COLORS (Pure White Alabaster, Icy Slate & Super-LumiNova)
      ========================================================================= */
-  --text-primary: #F4F4F0;         /* Alabaster Paper — Headings & High Emph */
-  --text-secondary: #B4BAC8;       /* Clean Titanium — Calm, Highly Legible Body */
-  --text-body: #B4BAC8;            /* Alias for Body Copy */
-  --text-muted: #8E96A8;           /* Neutral Metadata & Timestamps */
-  --text-dim: #5A6274;             /* Hairline Annotations & Footnotes */
-  --text-inverse: #050608;         /* Text on Bright Accents */
-  --text-gold: #D4AF37;            /* Curatorial Gold Callouts */
-  --text-gilt: #E5C58E;            /* Warm Gilt Text */
-  --text-rosegold: #B76E79;        /* Rose Gold Highlights */
+  --text-primary: #F8FAFC;         /* Pure Crisp Alabaster White — Headings */
+  --text-secondary: #CBD5E1;       /* Icy Titanium Slate — High Legibility */
+  --text-body: #94A3B8;            /* Calm Cool Steel Body */
+  --text-muted: #64748B;           /* Neutral Technical Metadata */
+  --text-dim: #475569;             /* Hairline Sub-Markings & Annotations */
+  --text-inverse: #030508;         /* Text on Bright Accents */
+  --text-accent: #38BDF8;          /* Technical Ice Cyan Callouts */
+  --text-cyan: #38BDF8;            /* Canonical Ice Cyan */
+  --text-platinum: #E2E8F0;        /* Brushed Platinum Heading Accent */
+  --text-lume: #38F2AF;            /* Super-LumiNova Precision Accent */
+  --text-gold: #38BDF8;            /* Remapped from Gold to Technical Ice Cyan */
+  --text-gilt: #E2E8F0;            /* Remapped from Gilt to Platinum */
+  --text-rosegold: #CBD5E1;        /* Remapped from Rosegold to Titanium */
 
   /* =========================================================================
-     4. BORDERS & FINE RULED SEPARATORS
+     4. BORDERS & FINE RULED SEPARATORS (Titanium Hairlines & Cyan Beams)
      ========================================================================= */
-  --border-subtle: #1A2634;        /* Restrained Structural Rule */
-  --border-strong: #27384B;        /* Focused Surface Perimeter */
-  --border-hairline: rgba(212, 175, 55, 0.15); /* Gold Hairline Accent */
-  --border-accent: rgba(212, 175, 55, 0.45);   /* Significant Gold Border */
-  --border-rosegold: rgba(183, 110, 121, 0.35); /* Rose Gold Accent Border */
+  --border-subtle: rgba(226, 232, 240, 0.08); /* Minimal Titanium Hairline */
+  --border-strong: rgba(226, 232, 240, 0.18); /* Defined Titanium Perimeter */
+  --border-hairline: rgba(56, 189, 248, 0.20); /* Cyan Hairline Accent */
+  --border-accent: rgba(56, 189, 248, 0.45);   /* Electric Cyan Border */
+  --border-platinum: rgba(226, 232, 240, 0.35); /* Brushed Platinum Border */
+  --border-rosegold: rgba(226, 232, 240, 0.20);
 
   /* =========================================================================
      5. STATUS & VERIFICATION SEMANTICS
      ========================================================================= */
-  --status-verified: #4EA87A;
-  --status-verified-bg: rgba(78, 168, 122, 0.12);
-  --status-reserved: #D4AF37;
-  --status-reserved-bg: rgba(212, 175, 55, 0.12);
-  --status-archived: #768194;
-  --status-archived-bg: rgba(118, 129, 148, 0.12);
-  --status-danger: #D96464;
-  --status-danger-bg: rgba(217, 100, 100, 0.12);
+  --status-verified: #38F2AF;       /* Super-LumiNova Green-Cyan */
+  --status-verified-bg: rgba(56, 242, 175, 0.12);
+  --status-reserved: #38BDF8;       /* Electric Ice Reserved */
+  --status-reserved-bg: rgba(56, 189, 248, 0.12);
+  --status-archived: #64748B;
+  --status-archived-bg: rgba(100, 116, 139, 0.12);
+  --status-danger: #F43F5E;
+  --status-danger-bg: rgba(244, 63, 94, 0.12);
 
   /* =========================================================================
      6. ATMOSPHERIC GRADIENTS & SAPPHIRE SPECULAR REFLECTIONS
      ========================================================================= */
-  --gradient-obsidian-hero: radial-gradient(130% 90% at 50% -10%, #0F1F30 0%, #050608 85%);
-  --gradient-card-vignette: radial-gradient(circle at 50% 35%, rgba(16, 25, 35, 0.6) 0%, #101923 100%);
-  --gradient-gold-sheen: linear-gradient(135deg, rgba(212, 175, 55, 0.18) 0%, rgba(229, 197, 142, 0.04) 60%, transparent 100%);
-  --gradient-sapphire: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.08) 45%, rgba(212, 175, 55, 0.16) 50%, transparent 60%);
-  --gradient-gold-button: linear-gradient(135deg, #E5C58E 0%, #D4AF37 50%, #B89228 100%);
+  --gradient-obsidian-hero: radial-gradient(130% 90% at 50% -10%, #0B192A 0%, #030508 85%);
+  --gradient-card-vignette: radial-gradient(circle at 50% 35%, rgba(20, 32, 48, 0.45) 0%, #0C121D 100%);
+  --gradient-cyan-sheen: linear-gradient(135deg, rgba(56, 189, 248, 0.16) 0%, rgba(226, 232, 240, 0.05) 60%, transparent 100%);
+  --gradient-sapphire: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.12) 45%, rgba(56, 189, 248, 0.20) 50%, transparent 60%);
+  --gradient-cyan-button: linear-gradient(135deg, #0284C7 0%, #38BDF8 50%, #67E8F9 100%);
+  --gradient-platinum-button: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 50%, #CBD5E1 100%);
+  --gradient-titanium-button: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  --gradient-gold-sheen: var(--gradient-cyan-sheen);
+  --gradient-gold-button: var(--gradient-cyan-button);
 
   /* =========================================================================
      7. TYPOGRAPHY STACKS & SCALES
@@ -120,7 +136,7 @@
   --space-20: 5rem;    /* 80px */
   --space-24: 6rem;    /* 96px */
   --space-32: 8rem;    /* 128px */
-  --space-editorial: clamp(5rem, 8vw, 12rem); /* High-End Editorial Rhythm */
+  --space-editorial: clamp(5rem, 8vw, 12rem);
 
   /* Containers & Layout */
   --container-max: 1320px;
@@ -128,7 +144,7 @@
   --container-narrow: 880px;
   --container-pad: clamp(1.25rem, 4vw, 3rem);
 
-  /* Hairline Radii (Restrained Luxury Craftsmanship) */
+  /* Hairline Radii */
   --radius-xs: 2px;
   --radius-sm: 4px;
   --radius-md: 6px;
@@ -138,21 +154,25 @@
   /* =========================================================================
      9. ELEVATION, SHADOWS & LUMINESCENCE
      ========================================================================= */
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.65), 0 0 1px rgba(212, 175, 55, 0.15);
-  --shadow-card-hover: 0 16px 48px rgba(0, 0, 0, 0.85), 0 0 24px rgba(212, 175, 55, 0.18);
-  --shadow-dropdown: 0 16px 44px rgba(3, 4, 6, 0.92), 0 0 0 1px var(--border-subtle);
-  --shadow-modal: 0 32px 80px rgba(0, 0, 0, 0.95), 0 0 1px var(--border-accent);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.75), 0 0 1px rgba(56, 189, 248, 0.2);
+  --shadow-card-hover: 0 18px 48px rgba(0, 0, 0, 0.9), 0 0 28px rgba(56, 189, 248, 0.25);
+  --shadow-dropdown: 0 16px 44px rgba(0, 0, 0, 0.95), 0 0 0 1px var(--border-strong);
+  --shadow-modal: 0 32px 80px rgba(0, 0, 0, 0.98), 0 0 1px var(--border-accent);
   --shadow-glow: 0 0 32px var(--accent-glow);
-  --shadow-gold-inset: inset 0 1px 0 rgba(229, 197, 142, 0.3);
+  --shadow-cyan-glow: 0 0 24px rgba(56, 189, 248, 0.45);
+  --shadow-platinum-inset: inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  --shadow-gold-inset: var(--shadow-platinum-inset);
 
   /* =========================================================================
-     10. MOTION TIMING & SPRINGS
+     10. MOTION TIMING & SPRINGS (Ultra-Smooth Horological Curves)
      ========================================================================= */
-  --transition-fast: 150ms ease;
-  --transition-base: 250ms ease;
-  --transition-smooth: 400ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-slow: 650ms cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-drawer: 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-fast: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 280ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-drawer: 380ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-out-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
 
   /* =========================================================================
      11. LAYERING / Z-INDEX
@@ -184,4 +204,5 @@
   --color-border-hairline: var(--border-subtle);
   --color-status-verified: var(--status-verified);
   --color-status-reserved: var(--status-reserved);
+  --gold: var(--accent-primary);
 }

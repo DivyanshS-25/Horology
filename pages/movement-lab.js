@@ -132,7 +132,7 @@ export async function render(ctx) {
             <div class="mb-3 font-mono text-xs font-bold" style="color: var(--accent-primary);">05 / KINETIC WINDING</div>
             <h4 class="font-serif text-xl text-primary mb-2">Oscillating Rotor</h4>
             <p class="body-muted text-sm leading-relaxed">
-              A weighted tungsten or 22k gold semicircular mass that rotates freely with natural wrist motion, winding the mainspring continuously via reverser wheels.
+              A weighted tungsten or platinum semicircular mass that rotates freely with natural wrist motion, winding the mainspring continuously via reverser wheels.
             </p>
           </div>
 

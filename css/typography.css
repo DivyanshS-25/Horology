@@ -109,8 +109,17 @@ pre,
   opacity: 1;
 }
 
-.text-accent {
+.text-accent,
+.text-cyan {
   color: var(--accent-primary);
+}
+
+.text-platinum {
+  color: var(--accent-secondary);
+}
+
+.text-lume {
+  color: var(--accent-lume);
 }
 
 .text-verified {
@@ -118,7 +127,7 @@ pre,
 }
 
 .text-gold {
-  color: var(--status-reserved);
+  color: var(--accent-primary); /* Remapped from gold to technical ice cyan */
 }
 
 .text-center {

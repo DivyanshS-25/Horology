@@ -1,4 +1,4 @@
-// HOROLOGY — Procedural Vector Watch Illustrations
+﻿// HOROLOGY — Procedural Vector Watch Illustrations
 // Renders brand-neutral, luxury vector timepieces in the Obsidian Luxury aesthetic
 
 export function generateWatchSvg(type = 'chronograph', options = {}) {
@@ -6,7 +6,7 @@ export function generateWatchSvg(type = 'chronograph', options = {}) {
     dialColor = '#0B131D',
     bezelColor = '#1B344B',
     caseColor = '#A6B2C2',
-    accentColor = '#D4AF37',
+    accentColor = '#38BDF8',
     handsColor = '#F4F4F0',
     hasSubdials = type === 'chronograph',
     hasDate = true,
@@ -34,7 +34,7 @@ export function generateWatchSvg(type = 'chronograph', options = {}) {
           <stop offset="100%" stop-color="#0F172A" />
         </linearGradient>
         <linearGradient id="sapphireSheen" x1="0%" y1="0%" x2="80%" y2="80%">
-          <stop offset="0%" stop-color="rgba(212, 175, 55, 0.2)" />
+          <stop offset="0%" stop-color="rgba(56, 189, 248, 0.2)" />
           <stop offset="40%" stop-color="transparent" />
           <stop offset="70%" stop-color="rgba(255, 255, 255, 0.08)" />
           <stop offset="100%" stop-color="transparent" />
@@ -86,7 +86,7 @@ export function generateWatchSvg(type = 'chronograph', options = {}) {
 
       <!-- Dial Typography / Brand -->
       <text x="160" y="125" font-family="'Cormorant Garamond', Georgia, serif" font-size="10" font-weight="600" letter-spacing="1.5" fill="#F1F4F8" text-anchor="middle">${brand.toUpperCase()}</text>
-      <text x="160" y="136" font-family="'Inter', sans-serif" font-size="5" letter-spacing="1" fill="#D4AF37" text-anchor="middle">CHRONOMETER</text>
+      <text x="160" y="136" font-family="'Inter', sans-serif" font-size="5" letter-spacing="1" fill="#38BDF8" text-anchor="middle">CHRONOMETER</text>
 
       <!-- Date Window (at 3 or 4:30) -->
       ${hasDate ? `

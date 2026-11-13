@@ -1,4 +1,4 @@
-// HOROLOGY — Authenticity Centre Route Module (Panel 10)
+﻿// HOROLOGY — Authenticity Centre Route Module (Panel 10)
 import { renderBreadcrumbs } from '../components/breadcrumb.js';
 import { icons } from '../utils/svgIcons.js';
 import { generateWatchSvg } from '../utils/watchIllustrations.js';
@@ -169,7 +169,7 @@ export const authenticityPage = {
               <div style="width: 85%; height: 85%;" id="loupeWatchSvg">
                 ${macroWatchSvg}
               </div>
-              <div id="loupeCircle" style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 2px solid var(--color-accent-primary); box-shadow: 0 0 24px rgba(212, 175, 55, 0.4), inset 0 0 20px rgba(212, 175, 55, 0.2); pointer-events: none; transform: translate(-50%, -50%); display: none; background: rgba(212, 175, 55, 0.08); backdrop-filter: contrast(1.2) brightness(1.1);"></div>
+              <div id="loupeCircle" style="position: absolute; width: 140px; height: 140px; border-radius: 50%; border: 2px solid var(--color-accent-primary); box-shadow: 0 0 24px rgba(56, 189, 248, 0.4), inset 0 0 20px rgba(56, 189, 248, 0.2); pointer-events: none; transform: translate(-50%, -50%); display: none; background: rgba(56, 189, 248, 0.08); backdrop-filter: contrast(1.2) brightness(1.1);"></div>
             </div>
 
             <div>

@@ -54,8 +54,8 @@ export async function render(ctx) {
       xPercent: 48,
       yPercent: 48,
       title: 'Gloss Dial & Chromalight',
-      spec: '18ct White Gold Applied Markers',
-      description: 'Deep black lacquered dial with hand-applied gold appliques filled with long-lasting blue Chromalight luminescence.'
+      spec: 'Applied Rhodium Markers',
+      description: 'Deep black lacquered dial with hand-applied platinum-coated appliques filled with long-lasting blue Chromalight luminescence.'
     },
     {
       id: 'hotspot-crown',
@@ -98,7 +98,7 @@ export async function render(ctx) {
           <div class="home-hero-layout" style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; position: relative; z-index: 10;">
             <div class="home-hero-content" style="padding-top: var(--space-20); padding-bottom: var(--space-16); max-width: 100%;">
               <div class="overline home-hero-eyebrow">
-                <span class="text-gold">HOROLOGY</span> &bull; <span>CURATED MECHANICAL TIMEPIECES</span>
+                <span class="text-accent">HOROLOGY</span> &bull; <span>CURATED MECHANICAL TIMEPIECES</span>
               </div>
               
               <h1 class="home-hero-title">
@@ -111,7 +111,7 @@ export async function render(ctx) {
               </p>
 
               <div class="home-hero-actions">
-                <a href="#/collection" class="btn btn-gold btn-lg">
+                <a href="#/collection" class="btn btn-primary btn-lg">
                   <span>Explore Collection</span>
                   ${ICONS.arrowRight}
                 </a>
@@ -184,7 +184,7 @@ export async function render(ctx) {
 
             <!-- Supporting Curatorial Information Panel -->
             <div class="masterwork-info-panel">
-              <div class="meta-label mb-2 text-gold">${escapeHTML(masterworkWatch.brand)} &bull; ${masterworkWatch.family}</div>
+              <div class="meta-label mb-2 text-accent">${escapeHTML(masterworkWatch.brand)} &bull; ${masterworkWatch.family}</div>
               <h3 class="font-serif text-3xl text-primary mb-2">${escapeHTML(masterworkWatch.model)}</h3>
               <p class="font-mono text-xs text-muted mb-6">Reference ${escapeHTML(masterworkWatch.referenceNumber)} &bull; Vintage ${masterworkWatch.year}</p>
 
@@ -358,7 +358,7 @@ export async function render(ctx) {
           </div>
 
           <div class="text-center mt-10">
-            <a href="#/authenticity" class="btn btn-gold btn-lg">
+            <a href="#/authenticity" class="btn btn-primary btn-lg">
               <span>Explore Authenticity Centre</span>
               ${ICONS.arrowRight}
             </a>
@@ -380,7 +380,7 @@ export async function render(ctx) {
                 <span>Swiss Lever Escapement</span>
               </div>
               <div class="movement-pin" style="bottom: 30%; right: 25%;">
-                <span class="text-gold">&bull;</span>
+                <span class="text-accent">&bull;</span>
                 <span>Variable Inertia Balance</span>
               </div>
             </div>
@@ -433,7 +433,7 @@ export async function render(ctx) {
                   </div>
                   <h3 class="card-editorial-title">${escapeHTML(article.title)}</h3>
                   <p class="card-editorial-snippet mb-4">${escapeHTML(article.summary)}</p>
-                  <div class="flex items-center gap-2 text-gold mt-auto font-mono text-xs uppercase">
+                  <div class="flex items-center gap-2 text-accent mt-auto font-mono text-xs uppercase">
                     <span>Read Essay</span>
                     ${ICONS.arrowRight}
                   </div>
@@ -460,7 +460,7 @@ export async function render(ctx) {
                 </p>
               </div>
               <div>
-                <a href="#/sell-consign" class="btn btn-gold btn-sm w-full text-center">
+                <a href="#/sell-consign" class="btn btn-primary btn-sm w-full text-center">
                   <span>Start a Consignment</span>
                   ${ICONS.arrowRight}
                 </a>
@@ -517,13 +517,13 @@ export async function render(ctx) {
       <section class="home-closing-chamber" aria-label="Closing Call to Action">
         <div class="container">
           <div class="closing-chamber-box sapphire-refraction">
-            <span class="overline mb-3 text-gold">DISCOVER EXCEPTIONAL HOROLOGY</span>
+            <span class="overline mb-3 text-accent">DISCOVER EXCEPTIONAL HOROLOGY</span>
             <h2 class="heading-1 mb-4">Begin Your Acquisition Journey</h2>
             <p class="lead-text mb-8" style="font-size: var(--text-base); max-width: 580px; margin-left: auto; margin-right: auto;">
               Explore the live curated vault of 24 certified timepieces or commission our senior horologists to source a specific reference.
             </p>
             <div class="flex items-center justify-center gap-4 flex-wrap">
-              <a href="#/collection" class="btn btn-gold btn-lg">
+              <a href="#/collection" class="btn btn-primary btn-lg">
                 <span>Explore The Collection</span>
                 ${ICONS.arrowRight}
               </a>

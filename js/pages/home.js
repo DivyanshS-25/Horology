@@ -21,7 +21,7 @@ export const homePage = {
       dialColor: '#07111F',
       bezelColor: '#1E293B',
       caseColor: '#CBD5E1',
-      accentColor: '#D4AF37',
+      accentColor: '#38BDF8',
       brand: 'Omega'
     });
 

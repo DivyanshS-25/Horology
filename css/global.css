@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HOROLOGY — Global Canvas & Utility Stylesheet
  * Direction: OBSIDIAN LUXURY EDITION (Phase 08)
  * Atmospheric Vignettes, Sapphire Crystal Refraction, Structural Rhythms
@@ -29,7 +29,7 @@ body.site-wrapper {
   padding-top: 0;
 }
 
-/* Custom Luxury Scrollbars (Obsidian / Champagne Gold) */
+/* Custom Luxury Scrollbars (Obsidian / Ice Cyan) */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
@@ -242,7 +242,7 @@ body.site-wrapper {
     115deg,
     transparent 35%,
     rgba(255, 255, 255, 0.04) 46%,
-    rgba(212, 175, 55, 0.12) 50%,
+    rgba(56, 189, 248, 0.12) 50%,
     rgba(255, 255, 255, 0.04) 54%,
     transparent 65%
   );
@@ -273,7 +273,7 @@ body.site-wrapper {
   z-index: 99999;
   background-color: #050608;
   background-image: 
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.08), transparent 70%),
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(56, 189, 248, 0.08), transparent 70%),
     radial-gradient(circle 600px at 100% 40%, rgba(27, 52, 75, 0.3), transparent),
     radial-gradient(circle 500px at 0% 80%, rgba(16, 25, 35, 0.4), transparent);
   display: flex;

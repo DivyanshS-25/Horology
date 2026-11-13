@@ -180,7 +180,7 @@ export async function render(ctx) {
               <span class="badge ${report.overallResult?.includes('Complete') ? 'badge-verified' : 'badge-reserved'} mb-2">
                 ${escapeHTML(report.overallResult || 'Preliminary Review Complete')}
               </span>
-              <div class="font-mono text-xs text-gold">Dossier ID: ${escapeHTML(dossierId)}</div>
+              <div class="font-mono text-xs text-accent">Dossier ID: ${escapeHTML(dossierId)}</div>
             </div>
           </div>
 
@@ -372,7 +372,7 @@ export async function render(ctx) {
                     <div class="loupe-lens" style="background-image: url('${imgUrl}');"></div>
                   </div>
                   <div class="flex items-center justify-between mt-2">
-                    <span class="font-mono text-xs text-gold uppercase">${escapeHTML(item.category || 'Studio Angle')} &bull; Angle 0${idx + 1}</span>
+                    <span class="font-mono text-xs text-accent uppercase">${escapeHTML(item.category || 'Studio Angle')} &bull; Angle 0${idx + 1}</span>
                     <span class="font-mono text-2xs text-muted">2.5&times; Visual Loupe</span>
                   </div>
                   <span class="text-2xs text-secondary mt-1">${escapeHTML(item.label || 'Reference Image (Illustrative)')}</span>

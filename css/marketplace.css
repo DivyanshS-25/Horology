@@ -1,4 +1,4 @@
-/**
+﻿/**
  * HOROLOGY — Scoped Stylesheet: Watch Collection & Marketplace
  * Direction C — Midnight Navy Precision
  */
@@ -38,7 +38,7 @@
 .marketplace-search-input:focus {
   border-color: var(--accent-primary);
   outline: none;
-  box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.2);
 }
 
 .marketplace-search-icon {
