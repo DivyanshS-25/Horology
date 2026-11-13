@@ -418,4 +418,13 @@
     grid-template-columns: 1fr;
     gap: var(--space-4);
   }
+
+  .home-hero-layout {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-8) !important;
+  }
+
+  .home-hero-chronometer-col {
+    display: none !important;
+  }
 }

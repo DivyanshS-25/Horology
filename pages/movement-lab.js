@@ -9,11 +9,14 @@ import { createBreadcrumb, ICONS } from '../js/components.js';
 import { MovementSimulator, MOVEMENT_PARTS } from '../js/features/movementSim.js';
 import { TimegrapherScreen } from '../js/features/timegrapher.js';
 import { playMechanicalClick, playWindingTick } from '../js/audio.js';
+import { MechanicalChronometerWidget, DiverBezelWidget } from '../js/features/motion.js';
 
 export const title = 'Movement Lab';
 
 let currentSimulator = null;
 let currentTimegrapher = null;
+let currentChronometer = null;
+let currentBezel = null;
 let parallaxCleanup = null;
 
 export async function render(ctx) {
@@ -209,6 +212,43 @@ export async function render(ctx) {
           </div>
         </div>
       </div>
+
+      <!-- Interactive Micro-Instruments: Live Chronometer & 120-Click Diver Bezel -->
+      <div class="p-8 bg-surface border mb-12" style="border-color: var(--border-subtle); border-radius: var(--radius-sm); width: 100%; max-width: 100%; box-sizing: border-box; overflow: hidden;">
+        <div class="section-header text-center mb-8">
+          <span class="section-kicker">Tactile Micro-Mechanics</span>
+          <h2 class="heading-2">Interactive Horological Test Benches</h2>
+          <p class="body-muted text-sm max-w-prose mx-auto">
+            Interact with micro-mechanical watch assemblies in real-time. Test escapement frequency sweeps with synthesized acoustics and experience 120-click unidirectional ratcheting bezel detents.
+          </p>
+        </div>
+
+        <div class="grid-12 gap-8 items-start" style="width: 100%; max-width: 100%; box-sizing: border-box;">
+          <!-- Instrument 01: Live 28,800 vph Chronometer Sweep -->
+          <div class="col-span-6 flex flex-col items-center" style="min-width: 0; max-width: 100%;">
+            <div class="text-center mb-4">
+              <span class="font-mono text-xs font-bold" style="color: var(--accent-primary);">INSTRUMENT 01 / ESCAPEMENT DYNAMICS</span>
+              <h3 class="font-serif text-xl text-primary mt-1">Live Escapement &amp; Seconds Sweep</h3>
+              <p class="body-muted text-xs mt-1">
+                Driven at 28,800 vph (8 ticks per second) with synchronized acoustic jewel impulses.
+              </p>
+            </div>
+            <div id="liveChronometerStage" style="width: 100%; max-width: 320px;"></div>
+          </div>
+
+          <!-- Instrument 02: 120-Click Diver Bezel Ratchet -->
+          <div class="col-span-6 flex flex-col items-center" style="min-width: 0; max-width: 100%;">
+            <div class="text-center mb-4">
+              <span class="font-mono text-xs font-bold" style="color: var(--accent-primary);">INSTRUMENT 02 / SUBMERSIBLE TELEMETRY</span>
+              <h3 class="font-serif text-xl text-primary mt-1">120-Click Unidirectional Diver Bezel</h3>
+              <p class="body-muted text-xs mt-1">
+                Rotatable dive bezel with 3&deg; detents, elapsed time calculation, and tactile ratchet audio.
+              </p>
+            </div>
+            <div id="diverBezelStage" style="width: 100%; max-width: 320px;"></div>
+          </div>
+        </div>
+      </div>
     </div>
   `;
 }
@@ -316,6 +356,18 @@ export function mount(ctx) {
       });
     });
   }
+
+  // 3. Live 28,800 vph Chronometer Sweep & Escapement Simulation
+  const chronoStage = document.getElementById('liveChronometerStage');
+  if (chronoStage) {
+    currentChronometer = new MechanicalChronometerWidget(chronoStage, { frequency: 28800 });
+  }
+
+  // 4. 120-Click Unidirectional Diver Bezel Widget
+  const bezelStage = document.getElementById('diverBezelStage');
+  if (bezelStage) {
+    currentBezel = new DiverBezelWidget(bezelStage);
+  }
 }
 
 export function unmount() {
@@ -326,5 +378,12 @@ export function unmount() {
   if (currentTimegrapher) {
     currentTimegrapher.stop();
     currentTimegrapher = null;
+  }
+  if (currentChronometer) {
+    currentChronometer.destroy();
+    currentChronometer = null;
+  }
+  if (currentBezel) {
+    currentBezel = null;
   }
 }

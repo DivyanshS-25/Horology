@@ -204,6 +204,18 @@ export async function render(ctx) {
               >
                 ${ICONS.share || '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>'}
               </button>
+              <button 
+                type="button" 
+                class="btn btn-secondary btn-icon lume-mode-toggle-btn" 
+                id="watchDetailLumeBtn" 
+                aria-label="Toggle Super-LumiNova Nocturnal View"
+                title="Toggle Super-LumiNova Nocturnal View"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                  <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.6"/>
+                </svg>
+              </button>
             </div>
             <a href="#/appointment?watchId=${watch.id}" class="btn btn-outline btn-xs w-full text-center mt-2" title="Schedule private consultation or viewing">
               Schedule Private Viewing &rarr;

@@ -189,6 +189,9 @@ export function createWatchCard(watch, { showActions = true, compact = false } =
   return `
     <article class="card-watch ${compact ? 'card-watch-compact' : ''} sapphire-refraction" data-watch-id="${watch.id}">
       <div class="card-watch-media">
+        <!-- Specular Sapphire Glare Sheen -->
+        <div class="card-sapphire-glare" aria-hidden="true"></div>
+
         <!-- Status & Telemetry Toggle Header -->
         <div class="card-watch-status">
           ${createStatusBadge(inspectionBadge)}

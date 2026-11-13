@@ -110,6 +110,27 @@ export function playWindingTick() {
   playMechanicalClick(3200, 0.012);
 }
 
+// Alternating escapement jewel pallet impulses (tick / tock)
+let escapementAlternator = false;
+
+/**
+ * Play an authentic mechanical escapement tick (28,800 vph / 4Hz)
+ */
+export function playEscapementTick() {
+  if (!isAudioEnabled()) return;
+  escapementAlternator = !escapementAlternator;
+  const freq = escapementAlternator ? 3180 : 2840;
+  playMechanicalClick(freq, 0.011);
+}
+
+/**
+ * Play a crisp metallic detent click for rotating dive bezels (120-click detent)
+ */
+export function playBezelClick() {
+  if (!isAudioEnabled()) return;
+  playMechanicalClick(1720, 0.022);
+}
+
 /**
  * Attach global listener to interactive elements when audio is enabled
  */

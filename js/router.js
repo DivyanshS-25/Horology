@@ -6,6 +6,7 @@
 
 import { scrollToTop } from './utilities.js';
 import { store } from './state.js';
+import { initScrollReveal, initNumberCounters } from './features/motion.js';
 
 export class Router {
   constructor({ routes = [], rootElement = null, onRouteChanged = null }) {
@@ -104,9 +105,17 @@ export class Router {
 
       const context = { path, params, query, route };
 
-      // Render template HTML
+      // Render template HTML with subtle upward glide transition
       const html = await module.render(context);
+      this.root.classList.add('route-view', 'route-view-enter');
       this.root.innerHTML = html;
+
+      // In next frame, transition into place
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          this.root.classList.remove('route-view-enter');
+        });
+      });
 
       // Update document title
       const title = module.title ? `${module.title} — HOROLOGY` : 'HOROLOGY — Beyond Time. Beyond Ordinary.';
@@ -116,6 +125,10 @@ export class Router {
       if (typeof module.mount === 'function') {
         module.mount(context);
       }
+
+      // Initialize staggered scroll-reveals & number counters
+      initScrollReveal();
+      initNumberCounters();
 
       // Notify navigation & global listeners
       if (typeof this.onRouteChanged === 'function') {

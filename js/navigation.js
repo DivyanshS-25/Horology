@@ -10,6 +10,7 @@ import { store } from './state.js';
 import { lockScroll, escapeHTML, formatPrice } from './utilities.js';
 import { BUSINESS_CONFIG } from './config.js';
 import { isAudioEnabled, toggleAudio, initGlobalAcoustics } from './audio.js';
+import { isLumeMode } from './features/motion.js';
 
 export class NavigationController {
   constructor() {
@@ -29,6 +30,7 @@ export class NavigationController {
     this.bindGlobalShortcuts();
     this.bindStateSubscriptions();
     this.bindAudioEvents();
+    this.bindGlideBarEvents();
 
     initGlobalAcoustics();
   }
@@ -39,6 +41,7 @@ export class NavigationController {
     const wishlistCount = store.getWishlist().length;
     const compareCount = store.getCompareList().length;
     const audioActive = isAudioEnabled();
+    const lumeActive = isLumeMode();
 
     this.headerEl.className = 'site-header';
     this.headerEl.innerHTML = `
@@ -88,10 +91,21 @@ export class NavigationController {
             <a href="#/sell-consign" class="nav-link" data-route="/sell-consign">Sell / Consign</a>
             <a href="#/movement-lab" class="nav-link" data-route="/movement-lab">Movement Lab</a>
             <a href="#/journal" class="nav-link" data-route="/journal">Journal</a>
+
+            <!-- Sliding Golden Active Indicator Bar -->
+            <div class="nav-active-glide-bar" id="navActiveGlideBar" aria-hidden="true"></div>
           </nav>
 
           <!-- Header Utilities -->
           <div class="header-actions">
+            <!-- Super-LumiNova Nocturnal View Toggle -->
+            <button type="button" class="nav-action-btn lume-mode-toggle-btn ${lumeActive ? 'lume-active' : ''}" id="headerLumeToggleBtn" aria-label="Lume Mode: ${lumeActive ? 'Active' : 'Off'}" title="${lumeActive ? 'Lume Mode: Active (Click for Daylight)' : 'Lume Mode: Off (Click for Super-LumiNova Nocturnal View)'}">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                <circle cx="12" cy="12" r="2" fill="currentColor" opacity="0.6"/>
+              </svg>
+            </button>
+
             <!-- Acoustic Tactility Toggle -->
             <button type="button" class="nav-action-btn ${audioActive ? 'audio-active' : ''}" id="headerAudioToggleBtn" aria-label="${audioActive ? 'Acoustic Tactility: Enabled' : 'Acoustic Tactility: Off'}" title="${audioActive ? 'Acoustic Tactility: Enabled (Click to Mute)' : 'Acoustic Tactility: Off (Click to Enable)'}">
               <span id="headerAudioIcon">${audioActive ? ICONS.volumeOn : ICONS.volumeOff}</span>
@@ -363,6 +377,15 @@ export class NavigationController {
         </nav>
 
         <div class="mt-auto pt-6 border-top" style="border-color: var(--border-subtle);">
+          <!-- Mobile Lume Toggle -->
+          <button type="button" class="btn btn-outline btn-sm w-full mb-3 flex items-center justify-between lume-mode-toggle-btn" id="drawerLumeToggleBtn">
+            <span class="flex items-center gap-2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+              <span>Super-LumiNova View</span>
+            </span>
+            <span class="font-mono text-xs text-muted">Lume Mode</span>
+          </button>
+
           <!-- Mobile Sound Toggle -->
           <button type="button" class="btn btn-outline btn-sm w-full mb-4 flex items-center justify-between" id="drawerAudioToggleBtn">
             <span class="flex items-center gap-2">
@@ -544,13 +567,51 @@ export class NavigationController {
   }
 
   updateActiveNav(path) {
+    let activeLink = null;
     document.querySelectorAll('.desktop-nav .nav-link').forEach(link => {
       const href = link.getAttribute('href');
       if (href && (href === `#${path}` || (path !== '/' && href.startsWith(`#${path}`)))) {
         link.setAttribute('aria-current', 'page');
+        if (!activeLink) activeLink = link;
       } else {
         link.removeAttribute('aria-current');
       }
+    });
+
+    this.positionGlideBar(activeLink);
+  }
+
+  positionGlideBar(targetLink) {
+    const glideBar = document.getElementById('navActiveGlideBar');
+    if (!glideBar) return;
+
+    if (targetLink && targetLink.offsetWidth > 0) {
+      glideBar.style.transform = `translateX(${targetLink.offsetLeft}px)`;
+      glideBar.style.width = `${targetLink.offsetWidth}px`;
+      glideBar.style.opacity = '1';
+    } else {
+      glideBar.style.opacity = '0';
+    }
+  }
+
+  bindGlideBarEvents() {
+    const nav = document.querySelector('.desktop-nav');
+    if (!nav) return;
+
+    nav.querySelectorAll('.nav-link').forEach(link => {
+      link.addEventListener('mouseenter', () => {
+        this.positionGlideBar(link);
+      });
+    });
+
+    nav.addEventListener('mouseleave', () => {
+      const activeLink = nav.querySelector('.nav-link[aria-current="page"]');
+      this.positionGlideBar(activeLink);
+    });
+
+    window.addEventListener('resize', () => {
+      const activeLink = nav.querySelector('.nav-link[aria-current="page"]');
+      this.positionGlideBar(activeLink);
     });
   }
 }

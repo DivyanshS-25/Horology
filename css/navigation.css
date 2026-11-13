@@ -44,6 +44,23 @@
   align-items: center;
   gap: var(--space-6);
   flex-wrap: nowrap;
+  position: relative;
+}
+
+/* Sliding Golden Active Indicator Bar */
+.nav-active-glide-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #D4AF37, #F3E5AB, #D4AF37);
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  border-radius: 2px;
+  pointer-events: none;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), width 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s ease;
+  opacity: 0;
+  z-index: 2;
+  will-change: transform, width, opacity;
 }
 
 .nav-link {
@@ -70,17 +87,6 @@
 
 .nav-link[aria-current="page"] {
   color: var(--text-primary);
-}
-
-.nav-link[aria-current="page"]::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background-color: var(--accent-primary);
-  box-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
 
 /* Brands Dropdown */
@@ -162,6 +168,13 @@
   color: var(--accent-primary);
   border-color: var(--border-hairline);
   background: rgba(212, 175, 55, 0.08);
+}
+
+.nav-action-btn.lume-active {
+  color: #38f2af;
+  border-color: rgba(56, 242, 175, 0.5);
+  background: rgba(56, 242, 175, 0.12);
+  box-shadow: 0 0 12px rgba(56, 242, 175, 0.4);
 }
 
 .counter-badge {

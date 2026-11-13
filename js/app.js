@@ -6,6 +6,7 @@
 
 import { Router } from './router.js';
 import { NavigationController } from './navigation.js';
+import { initHorologyMotion } from './features/motion.js';
 
 // Route Definitions mapping all 22 sitemap views to 16 page modules
 const ROUTES = [
@@ -111,6 +112,9 @@ class App {
     try {
       // Global Error Boundary
       this.setupErrorBoundary();
+
+      // Initialize Motion, 3D Tilt, Lume Mode & Micro-Mechanics
+      initHorologyMotion();
 
       // Initialize Navigation & UI Chrome
       this.navController.init();

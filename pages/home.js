@@ -12,8 +12,11 @@ import { escapeHTML, formatPrice } from '../js/utilities.js';
 import { store } from '../js/state.js';
 import { quickView } from '../js/quick-view.js';
 import { playMechanicalClick, playWindingTick } from '../js/audio.js';
+import { MechanicalChronometerWidget } from '../js/features/motion.js';
 
 export const title = 'Beyond Time. Beyond Ordinary.';
+
+let homeChronometer = null;
 
 export async function render(ctx) {
   const heroPrimaryImg = resolveAsset('HZ-HERO-001');
@@ -91,44 +94,54 @@ export async function render(ctx) {
         </div>
 
         <div class="container">
-          <div class="home-hero-content">
-            <div class="overline home-hero-eyebrow">
-              <span class="text-gold">HOROLOGY</span> &bull; <span>CURATED MECHANICAL TIMEPIECES</span>
-            </div>
-            
-            <h1 class="home-hero-title">
-              BEYOND TIME.<br>
-              <em>BEYOND ORDINARY.</em>
-            </h1>
-            
-            <p class="home-hero-lead">
-              A private digital gallery of certified pre-owned mechanical chronometers from Rolex, Omega, Tudor, and Grand Seiko. Examined with forensic watchmaking rigor and validated with published electronic timing telemetry.
-            </p>
+          <div class="home-hero-layout" style="display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; align-items: center; position: relative; z-index: 10;">
+            <div class="home-hero-content" style="padding-top: var(--space-20); padding-bottom: var(--space-16); max-width: 100%;">
+              <div class="overline home-hero-eyebrow">
+                <span class="text-gold">HOROLOGY</span> &bull; <span>CURATED MECHANICAL TIMEPIECES</span>
+              </div>
+              
+              <h1 class="home-hero-title">
+                BEYOND TIME.<br>
+                <em>BEYOND ORDINARY.</em>
+              </h1>
+              
+              <p class="home-hero-lead">
+                A private digital gallery of certified pre-owned mechanical chronometers from Rolex, Omega, Tudor, and Grand Seiko. Examined with forensic watchmaking rigor and validated with published electronic timing telemetry.
+              </p>
 
-            <div class="home-hero-actions">
-              <a href="#/collection" class="btn btn-gold btn-lg">
-                <span>Explore Collection</span>
-                ${ICONS.arrowRight}
-              </a>
-              <a href="#/about" class="btn btn-outline btn-lg">
-                <span>Discover The Experience</span>
-              </a>
+              <div class="home-hero-actions">
+                <a href="#/collection" class="btn btn-gold btn-lg">
+                  <span>Explore Collection</span>
+                  ${ICONS.arrowRight}
+                </a>
+                <a href="#/about" class="btn btn-outline btn-lg">
+                  <span>Discover The Experience</span>
+                </a>
+              </div>
+
+              <!-- Precision Horological Pillars with Animated Counters -->
+              <div class="home-hero-pillars">
+                <div class="home-hero-pillar-item">
+                  <strong data-counter-target="8" data-counter-suffix="-Stage">8-Stage</strong>
+                  <span>Forensic Intake</span>
+                </div>
+                <div class="home-hero-pillar-item">
+                  <strong>&plusmn;2 s/day</strong>
+                  <span>Timing Benchmarks</span>
+                </div>
+                <div class="home-hero-pillar-item">
+                  <strong data-counter-target="24" data-counter-suffix=" Months">24 Months</strong>
+                  <span>Mechanical Warranty</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Precision Horological Pillars -->
-            <div class="home-hero-pillars">
-              <div class="home-hero-pillar-item">
-                <strong>8-Stage</strong>
-                <span>Forensic Intake</span>
+            <!-- Hero Live Chronometer Instrument -->
+            <div class="home-hero-chronometer-col hide-mobile" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+              <div style="font-family: var(--font-mono); font-size: 10px; color: var(--accent-primary); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 8px;">
+                &#x2316; Live Escapement Telemetry
               </div>
-              <div class="home-hero-pillar-item">
-                <strong>&plusmn;2 s/day</strong>
-                <span>Timing Benchmarks</span>
-              </div>
-              <div class="home-hero-pillar-item">
-                <strong>24 Months</strong>
-                <span>Mechanical Warranty</span>
-              </div>
+              <div id="homeHeroChronometerStage" style="width: 100%; max-width: 300px;"></div>
             </div>
           </div>
         </div>
@@ -593,4 +606,17 @@ export function mount(ctx) {
       });
     }
   });
+
+  // 6. Mount Live 28,800 vph Chronometer in Hero
+  const heroChronoStage = document.getElementById('homeHeroChronometerStage');
+  if (heroChronoStage) {
+    homeChronometer = new MechanicalChronometerWidget(heroChronoStage, { frequency: 28800 });
+  }
+}
+
+export function unmount() {
+  if (homeChronometer) {
+    homeChronometer.destroy();
+    homeChronometer = null;
+  }
 }
