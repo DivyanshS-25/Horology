@@ -368,7 +368,7 @@ export async function render(ctx) {
               return `
                 <div class="dossier-photo-card" data-loupe-target>
                   <div class="dossier-photo-frame loupe-container">
-                    <img src="${imgUrl}" alt="${escapeHTML(item.label || 'Inspection View')}" class="loupe-base-img" loading="lazy">
+                    <img src="${imgUrl}" alt="${escapeHTML(item.label || 'Inspection View')}" class="loupe-base-img" loading="lazy" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
                     <div class="loupe-lens" style="background-image: url('${imgUrl}');"></div>
                   </div>
                   <div class="flex items-center justify-between mt-2">

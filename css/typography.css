@@ -4,7 +4,12 @@
  */
 
 /* Editorial Headings (Cormorant Garamond) */
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .font-serif,
 .heading-display,
 .heading-1,
@@ -49,7 +54,10 @@ h1, h2, h3, h4, h5, h6,
 }
 
 /* Technical Monospace & Spec Data (JetBrains Mono) */
-code, kbd, samp, pre,
+code,
+kbd,
+samp,
+pre,
 .font-mono,
 .tabular-spec,
 .timegrapher-readout,
@@ -124,4 +132,3 @@ code, kbd, samp, pre,
 .text-left {
   text-align: left;
 }
-

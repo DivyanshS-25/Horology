@@ -1,4 +1,4 @@
-// HOROLOGY — 24 Canonical Demonstration Luxury Timepiece Records
+﻿// HOROLOGY â€” 24 Canonical Demonstration Luxury Timepiece Records
 // Exact adherence to Phase 03 Schema & 100% Verified Facet Coverage
 export const WATCHES = [
   // ==========================================
@@ -30,9 +30,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'assets/images/hero/hero-home-primary-16x9.jpg',
-    imageUrl: 'assets/images/hero/hero-home-primary-16x9.jpg',
-    gallery: ['assets/images/hero/hero-home-primary-16x9.jpg'],
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-primary-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 1,
@@ -81,9 +84,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 2,
@@ -132,9 +138,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 15,
@@ -183,9 +192,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1622434641406-a158123450f9?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 3,
@@ -234,9 +246,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 16,
@@ -285,9 +300,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspection Pending',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-primary-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 17,
@@ -340,9 +358,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg',
-    imageUrl: 'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg',
-    gallery: ['assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'],
+    image: 'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 4,
@@ -391,9 +412,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 18,
@@ -442,9 +466,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1619134778706-7015533a6150?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1619134778706-7015533a6150?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1619134778706-7015533a6150?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 19,
@@ -493,9 +520,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 5,
@@ -544,9 +574,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Watch Only',
     inspectionStatus: 'Inspection Pending',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 20,
@@ -595,9 +628,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1539185441755-769473a23570?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 21,
@@ -650,9 +686,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 6,
@@ -701,9 +740,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1612817288484-6f916006741a?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 22,
@@ -752,9 +794,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 23,
@@ -803,9 +848,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspection Pending',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1524592094714-0f0654e20314?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1622434641406-a158123450f9?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 24,
@@ -854,9 +902,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Original Box',
     inspectionStatus: 'Inspection Pending',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 25,
@@ -905,9 +956,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Watch Only',
     inspectionStatus: 'Inspection Pending',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1526045612212-70caf35c14df?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 26,
@@ -960,9 +1014,13 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: 'assets/images/hero/hz_hero_003_v3_1794490992618.jpg',
-    imageUrl: 'assets/images/hero/hz_hero_003_v3_1794490992618.jpg',
-    gallery: ['assets/images/hero/hz_hero_003_v3_1794490992618.jpg'],
+    image: 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85',
+      'assets/images/hero/hz_hero_003_v3_1794490992618.jpg',
+      'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 7,
@@ -1011,9 +1069,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1518131672697-613becd4fab5?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1518131672697-613becd4fab5?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1518131672697-613becd4fab5?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: true,
     featuredOrder: 8,
@@ -1062,9 +1123,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1594534475808-b18fc33b045e?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 27,
@@ -1113,9 +1177,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Original Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 28,
@@ -1164,9 +1231,12 @@ export const WATCHES = [
     papersStatus: 'Original Papers',
     documentationCategory: 'Box and Papers',
     inspectionStatus: 'Inspected',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 29,
@@ -1215,9 +1285,12 @@ export const WATCHES = [
     papersStatus: 'None',
     documentationCategory: 'Watch Only',
     inspectionStatus: 'Inspection Pending',
-    image: '',
-    imageUrl: '',
-    gallery: [],
+    image: 'https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1200&q=85',
+    imageUrl: 'https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1200&q=85',
+    gallery: [
+      'https://images.unsplash.com/photo-1548169874-53e85f753f1e?auto=format&fit=crop&w=1200&q=85',
+      'https://images.unsplash.com/photo-1600003014755-ba31aa59c4b6?auto=format&fit=crop&w=1200&q=85'
+    ],
     imageIsIllustrative: true,
     featured: false,
     featuredOrder: 30,
@@ -1241,5 +1314,6 @@ export const WATCHES = [
     }
   }
 ];
+
 
 

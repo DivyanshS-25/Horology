@@ -623,24 +623,27 @@ export function enrichWatch(rawWatch) {
 
   // 6. Gallery Items Structured Array
   const baseImg = rawWatch.image || rawWatch.imageUrl || 'assets/images/hero/hero-home-primary-16x9.jpg';
-  const macroImg = 'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg';
+  const galleryList = Array.isArray(rawWatch.gallery) && rawWatch.gallery.length > 0 
+    ? rawWatch.gallery 
+    : [baseImg, 'assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg'];
   
-  const galleryItems = [
-    {
-      assetKey: baseImg,
-      category: 'Studio Master',
-      label: 'Primary Studio Staging (Illustrative)',
-      isIllustrative: true,
-      isInspectionEvidence: false
-    },
-    {
-      assetKey: macroImg,
-      category: 'Dial Macro',
-      label: 'Extreme Dial & Handset Macro (Illustrative)',
-      isIllustrative: true,
-      isInspectionEvidence: false
-    }
+  const galleryCategories = [
+    { category: 'Studio Master', label: 'Primary Studio Staging (Illustrative)' },
+    { category: 'Dial Macro', label: 'Extreme Dial & Handset Macro (Illustrative)' },
+    { category: 'Case Architecture', label: 'Case Profile & Bezel Detail (Illustrative)' },
+    { category: 'Movement Inspection', label: 'Calibre & Escapement View (Illustrative)' }
   ];
+
+  const galleryItems = galleryList.map((assetKey, idx) => {
+    const meta = galleryCategories[idx] || { category: `Perspective 0${idx + 1}`, label: `Horological Detail 0${idx + 1}` };
+    return {
+      assetKey,
+      category: meta.category,
+      label: meta.label,
+      isIllustrative: true,
+      isInspectionEvidence: false
+    };
+  });
 
   // Curated Horological Style Tags for Phase 05 Discovery Engine
   const styleTags = WATCH_STYLE_TAGS[rawWatch.id] || intel.styleTags || ['Classic'];

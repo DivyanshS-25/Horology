@@ -264,7 +264,7 @@ function renderWishlistCard(watch, isWishlistItem = true) {
         </div>
 
         <a href="${detailUrl}" class="card-watch-img-link" aria-label="View details of ${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}">
-          <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="card-watch-img" loading="lazy" decoding="async">
+          <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="card-watch-img" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
         </a>
       </div>
 
@@ -584,7 +584,7 @@ export function openCompareLimitModal(newWatchId, currentCompareIds = []) {
           return `
             <div class="p-3 bg-secondary border flex items-center justify-between gap-4" style="border-color:var(--border-subtle);border-radius:var(--radius-xs);">
               <div class="flex items-center gap-3">
-                <img src="${img}" alt="${escapeHTML(w.model)}" style="width:40px;height:40px;object-fit:contain;background:var(--bg-primary);border-radius:var(--radius-xs);">
+                <img src="${img}" alt="${escapeHTML(w.model)}" style="width:40px;height:40px;object-fit:cover;background:var(--bg-primary);border-radius:var(--radius-xs);" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
                 <div>
                   <div class="font-sans font-semibold text-sm text-primary">${escapeHTML(w.brand)} ${escapeHTML(w.model)}</div>
                   <div class="font-mono text-xs text-muted">Ref. ${escapeHTML(w.reference)} &bull; ${formatPrice(w.price)}</div>

@@ -94,6 +94,7 @@ export async function render(ctx) {
               class="gallery-main-img" 
               id="galleryMainImg" 
               data-zoom-src="${primaryImgUrl}"
+              onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';"
             >
 
             <!-- Interactive Loupe Zoom Overlay (Desktop Hover) -->
@@ -115,7 +116,7 @@ export async function render(ctx) {
             </span>
           </div>
 
-          <!-- Horizontal Thumbnail Rail with verified non-AI images & designed placeholder -->
+          <!-- Horizontal Thumbnail Rail with verified real watch photography -->
           <div class="gallery-thumbnails" role="tablist" aria-label="Gallery Angle Thumbnails">
             ${galleryItems.map((item, idx) => {
               const thumbUrl = resolveAsset(item.assetKey);
@@ -128,19 +129,10 @@ export async function render(ctx) {
                   data-index="${idx}" 
                   aria-label="View ${escapeHtml(item.category || 'angle')} image ${idx + 1}"
                 >
-                  <img src="${thumbUrl}" alt="Thumbnail ${idx + 1}" loading="lazy" decoding="async">
+                  <img src="${thumbUrl}" alt="Thumbnail ${idx + 1}" loading="lazy" decoding="async" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
                 </button>
               `;
             }).join('')}
-
-            <!-- Designed Midnight Navy Placeholder for Unphotographed Physical Angle -->
-            <div class="gallery-thumb gallery-thumb-placeholder" title="Physical Macro Angle Unattached for Demonstration Record">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M12 8v4l3 3"/>
-              </svg>
-              <span>Angle 03</span>
-            </div>
           </div>
         </div>
 
@@ -619,7 +611,7 @@ export async function render(ctx) {
         </button>
       </div>
       <div class="lightbox-stage" id="lightboxStage">
-        <img src="${primaryImgUrl}" alt="${escapeHtml(watch.model)}" class="lightbox-img" id="lightboxImg">
+        <img src="${primaryImgUrl}" alt="${escapeHtml(watch.model)}" class="lightbox-img" id="lightboxImg" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
       </div>
     </div>
   `;

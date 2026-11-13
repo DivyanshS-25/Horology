@@ -86,7 +86,7 @@ export async function render(ctx) {
            =================================================================== -->
       <section class="home-hero-band" aria-label="Hero Showcase">
         <div class="home-hero-backdrop">
-          <img src="${heroPrimaryImg}" alt="Haute horlogerie chronometer on obsidian slate" class="home-hero-bg-img" loading="eager" fetchpriority="high">
+          <img src="${heroPrimaryImg}" alt="Haute horlogerie chronometer on obsidian slate" class="home-hero-bg-img" loading="eager" fetchpriority="high" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
           <div class="home-hero-scrim"></div>
         </div>
 
@@ -155,7 +155,7 @@ export async function render(ctx) {
               </div>
               
               <div class="hotspot-stage">
-                <img src="${masterworkImg}" alt="${escapeHTML(masterworkWatch.brand)} ${escapeHTML(masterworkWatch.model)}" class="masterwork-image" loading="lazy">
+                <img src="${masterworkImg}" alt="${escapeHTML(masterworkWatch.brand)} ${escapeHTML(masterworkWatch.model)}" class="masterwork-image" loading="lazy" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
                 
                 <!-- Interactive Watch Hotspots -->
                 ${masterworkHotspots.map(h => createHotspotMarker(h)).join('')}
@@ -343,7 +343,7 @@ export async function render(ctx) {
         <div class="container">
           <div class="movement-preview-split">
             <div class="movement-preview-stage sapphire-refraction">
-              <img src="${movementMacroImg}" alt="Microscopic mechanical watch escapement" class="w-full object-cover aspect-16-9" loading="lazy">
+              <img src="${movementMacroImg}" alt="Microscopic mechanical watch escapement" class="w-full object-cover aspect-16-9" loading="lazy" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-secondary-dial-macro-16x9.jpg';">
               <!-- Technical callout pin -->
               <div class="movement-pin" style="top: 25%; left: 35%;">
                 <span class="text-verified">&bull;</span>

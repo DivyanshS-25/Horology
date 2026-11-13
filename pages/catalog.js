@@ -141,7 +141,7 @@ export async function render(ctx) {
                     <p class="font-mono text-xs text-muted mb-4">Ref. ${escapeHTML(watch.reference)} &bull; ${watch.year}</p>
                     
                     <div class="aspect-16-9 bg-secondary border mb-6 flex items-center justify-center overflow-hidden" style="border-color: var(--border-subtle); border-radius: var(--radius-xs);">
-                      <img src="${resolveAsset(watch.image, { title: watch.brand, subtitle: watch.model })}" alt="${escapeHTML(watch.model)}" class="w-full h-full object-contain p-4">
+                      <img src="${resolveAsset(watch.image, { title: watch.brand, subtitle: watch.model })}" alt="${escapeHTML(watch.model)}" class="w-full h-full object-cover" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
                     </div>
 
                     <div class="font-mono text-xl font-bold text-primary mb-3">${formatPrice(watch.price)}</div>

@@ -231,7 +231,7 @@ function renderWatchHeaderCell(w) {
         </button>
 
         <div class="compare-thumb-frame">
-          <img src="${imgUrl}" alt="${escapeHTML(w.brand)} ${escapeHTML(w.model)}" class="compare-thumb-img">
+          <img src="${imgUrl}" alt="${escapeHTML(w.brand)} ${escapeHTML(w.model)}" class="compare-thumb-img" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
         </div>
 
         <span class="compare-brand-meta">${escapeHTML(w.brand)} &bull; ${escapeHTML(w.overview?.origin || 'Switzerland')}</span>
@@ -444,7 +444,7 @@ function renderQuickAddCard(watch) {
   return `
     <article class="card-watch" data-watch-id="${watch.id}">
       <div class="card-watch-media">
-        <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="card-watch-img" loading="lazy">
+        <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="card-watch-img" loading="lazy" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
       </div>
       <div class="card-watch-body">
         <span class="card-watch-brand">${escapeHTML(watch.brand)}</span>
@@ -608,7 +608,7 @@ export function mount(ctx) {
     return `
       <div class="watch-picker-item" data-id="${w.id}">
         <div style="width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;background:var(--bg-primary);border-radius:var(--radius-xs);margin-bottom:var(--space-2);overflow:hidden;">
-          <img src="${imgUrl}" alt="${escapeHTML(w.model)}" style="width:80%;height:80%;object-fit:contain;">
+          <img src="${imgUrl}" alt="${escapeHTML(w.model)}" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
         </div>
         <span class="font-mono text-xs text-muted uppercase">${escapeHTML(w.brand)}</span>
         <h4 class="font-serif text-sm text-primary mb-1">${escapeHTML(w.model)}</h4>

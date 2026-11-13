@@ -67,7 +67,7 @@ class QuickViewController {
               ${createStatusBadge(watch.inspectionStatus || 'Inspected')}
             </div>
             <div class="quick-view-image-frame">
-              <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="quick-view-img" loading="eager">
+              <img src="${imgUrl}" alt="${escapeHTML(watch.brand)} ${escapeHTML(watch.model)}" class="quick-view-img" loading="eager" onerror="this.onerror=null; this.src='assets/images/hero/hero-home-primary-16x9.jpg';">
             </div>
             <div class="quick-view-disclosure">
               <span>Demonstration Record &bull; Illustrative Studio Imagery</span>
